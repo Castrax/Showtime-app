@@ -6,12 +6,12 @@
 // General style
 $font-family-sans-serif:  $body-font;
 $headings-font-family:    $headers-font;
-$body-bg:                 $light-gray;
+$body-bg:                 $st-babypowder;
 $font-size-base: 1rem;
 
 // Colors
 $body-color: $gray;
-$primary:    $blue;
+$primary:    $st-yellow;
 $success:    $green;
 $info:       $yellow;
 $danger:     $red;
@@ -22,4 +22,6 @@ $border-radius:    2px;
 $border-radius-lg: 2px;
 $border-radius-sm: 2px;
 
-// Override other variables below!
+//Headings
+$h1-font-size: $font-size-base * 2;
+$h2-font-size: $font-size-base * 1.5;
