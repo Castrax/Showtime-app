@@ -3,13 +3,22 @@
     <div class="movie-infos">
       <h1><%= @movie.title %></h1>
       <p><%= @movie.description %></p>
-      <p><%= @movie.category %></p>
-      <p><%= @movie.director %></p>
-      <p><%= @movie.duration %></p>
+      <p>Director: <%= @movie.director %></p>
+      <p>Cast:<%= @movie.cast %></p>
+      <p><%= @movie.category %> (<%= @movie.duration %>)</p>
       <p><%= @movie.rating %></p>
     </div>
     <div class="movie-showtimes">
-
+      <div class="card">
+        <h5 class="card-header"><%= @theater.name %></h5>
+        <% @showtimes.each do |showtime| %>
+          <div class="card-body">
+            <h5 class="card-title"><%= showtime.start_hour %> - <%= showtime.end_hour %></h5>
+            <p class="card-text"><%= showtime.empty_seats %></p>
+            <p class="card-text"><%= showtime.price_per_seat %></p>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
