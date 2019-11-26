@@ -1,13 +1,16 @@
 <div class="header-poster">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @movie.photos.first.key %>);">
+      <h1><%= @movie.title %></h1>
+  </div>
   <div class="container">
     <div class="movie-infos">
-      <h1><%= @movie.title %></h1>
-      <p><%= @movie.description %></p>
-      <p>Director: <%= @movie.director %></p>
-      <p>Cast:<%= @movie.cast %></p>
       <p><%= @movie.category %> (<%= @movie.duration %>)</p>
-      <p><%= @movie.rating %></p>
+      <p>Director: <span><%= @movie.director %></span> </p>
+      <p>Cast:<span><%= @movie.cast %></span></p>
+      <p><%= @movie.description %></p>
+      <p><%= @movie.rating %> / 5</p>
     </div>
+    <h2>Showtimes around you</h2>
     <div class="movie-showtimes">
       <div class="card">
         <h5 class="card-header"><%= @theater.name %></h5>
