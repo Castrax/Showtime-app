@@ -1,3 +1,5 @@
+require 'ipinfo-rails'
+
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   # Settings specified here will take precedence over those in config/application.rb.
@@ -6,6 +8,9 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+
+  #IPinfo config
+  config.middleware.use(IPinfoMiddleware, {token: "44eb13e50e841d"})
 
   # Do not eager load code on boot.
   config.eager_load = false
