@@ -1,10 +1,13 @@
 <div class="container">
   <h1 id="logo">Showtime</h1>
   <h2 class="tagline">Don't miss the experience!</h2>
-  <input class="form-control mt-5" type="text" placeholder="Where are you?">
-  <div class="current-location mt-2">
-    <i class="fas fa-location-arrow"></i>
-    <p class="location text mb-0 pl-2">Use my current location</p>
-  </div>
-  <button type="button" class="btn btn-primary mt-5 offset-4">Find movies</button>
+  <input class="form-control mt-5" id="autocomplete_address" type="text" placeholder="Where are you?">
+  <%= link_to "", class: "geoloc" do %>
+    <div class="current-location mt-2">
+      <i class="fas fa-location-arrow"></i>
+      <p class="location text mb-0 pl-2">Use my current location</p>
+    </div>
+  <% end %>
+  <%= link_to '<button type="button" class="btn btn-primary mt-5 offset-4">Find movies</button>'.html_safe, movies_path %>
 </div>
+
