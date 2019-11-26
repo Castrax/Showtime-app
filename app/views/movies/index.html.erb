@@ -1,0 +1,7 @@
+<h2>Best Deals</h2>
+<% @movies.each do |movie| %>
+  <h2><%= movie.category %></h2>
+  <h3><%= movie.title %></h3>
+  <p><%= movie.rating %></p>
+    <p>From <%= movie.showtimes.map { |showtime| showtime.price_per_seat }.min %></p>
+<% end %>
