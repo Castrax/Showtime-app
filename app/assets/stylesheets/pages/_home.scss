@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+body {
+  background-image: url('https://source.unsplash.com/16Tu8S18pu4/375x812');
+  background-position: 0% 0%;
+}
+
+#logo {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.tagline {
+  text-align: center;
+  padding-top: 2rem;
+  font-weight: 300;
+}
+
+.current-location {
+  display: flex;
+  justify-content: flex-start;
+}
