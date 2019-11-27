@@ -1,23 +1,11 @@
 import "bootstrap";
 
 import { initAutocomplete } from "../plugins/init_autocomplete";
+import { geoloc } from "../plugins/geoloc";
 
 initAutocomplete();
 
-const button = document.querySelector('.geoloc');
-button.addEventListener('click', (event) => {
-  event.preventDefault();
-  navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
-});
 
-const successCallback = (event) => {
-  const crd = event.coords;
-  const lat = crd.latitude;
-  const long = crd.longitude;
-  window.location.replace(`http://localhost:3000/movies?lng=${long}&lat=${lat}`);
+if (document.querySelector('.geoloc')) {
+  geoloc();
 };
-
-const errorCallback = (err) => {
-  console.warn(`ERREUR (${err.code}): ${err.message}`);
-};
-

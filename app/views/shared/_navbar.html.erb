@@ -1,6 +1,6 @@
 <div class="container">
   <div class="navbar navbar-expand-sm navbar-light">
-    <p><%= Geocoder.search([params[:lng].to_f, params[:lat].to_f]) %></p>
+    <p><%= @geolocation.suburb %> - <%= @geolocation.city %></p>
     <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/castrax" />
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
       <a class="dropdown-item" href="#">Home</a>
