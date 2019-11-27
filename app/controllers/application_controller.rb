@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
   before_action :set_coordinates
+  before_action :authenticate_user!
 
   private
 
