@@ -1,11 +1,15 @@
 <div class="header-poster">
   <% if @movie.photos.attached? %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @movie.photos.first.key %>);">
-      <h1><%= @movie.title %></h1>
+      <div>
+        <h1><%= @movie.title %></h1>
+      </div>
     </div>
   <% else %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path("unknown_mn7pzj.png") %>);">
-      <h1><%= @movie.title %></h1>
+      <div>
+        <h1><%= @movie.title %></h1>
+      </div>
     </div>
   <% end %>
   <div class="container">
@@ -23,12 +27,16 @@
             <% end %>
           </small>
       </div>
+      <div class="key-elements">
       <p><%= @movie.category %> (<%= @movie.duration %>)</p>
       <p>Director: <span><%= @movie.director %></span> </p>
       <p>Cast:<span><%= @movie.cast %></span></p>
-      <p><%= @movie.description %></p>
+      </div>
+      <div class="movie-description">
+        <p><%= @movie.description %></p>
+      </div>
     </div>
-    <h2>Showtimes around you</h2>
+    <h2 style="text-align: center">Showtimes around you</h2>
     <div class="movie-showtimes">
       <div class="card" data-toggle="modal" data-target=".bd-example-modal-sm">
         <h5 class="card-header"><%= @theater.name %></h5>
