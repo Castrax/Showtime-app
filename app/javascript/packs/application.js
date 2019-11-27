@@ -1,7 +1,10 @@
 import "bootstrap";
+
 import { initAutocomplete } from "../plugins/init_autocomplete";
 
-const button = document.querySelector('.current-location');
+initAutocomplete();
+
+const button = document.querySelector('.geoloc');
 button.addEventListener('click', (event) => {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
@@ -18,4 +21,3 @@ const errorCallback = (err) => {
   console.warn(`ERREUR (${err.code}): ${err.message}`);
 };
 
-initAutocomplete();

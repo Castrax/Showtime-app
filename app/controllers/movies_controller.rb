@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   def index
     @movies = Movie.all
+    @theaters = Theater.geocoded.near([params[:lng], params[:lat]], 50)
+    raise
   end
 
   def show
