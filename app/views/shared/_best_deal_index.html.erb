@@ -8,12 +8,18 @@
           <%= cl_image_tag("unknown_mn7pzj.png", :width=>304, :crop=>"scale") %>
         <% end %>
         <div class="card-trip-infos">
-          <div>
-            <h3><%= movie.title %></h3>
-            <p><% movie.rating.to_i.times do %>
-              <i class="fas fa-star"></i>
-              <% end %>
-            </p>
+          <div class="list-group">
+              <small>
+                <% count = 0 %>
+                <% 5.times do %>
+                  <% if movie.rating.round > count %>
+                    <i class="fas fa-star"></i>
+                  <% else %>
+                    <i class="far fa-star"></i>
+                  <% end %>
+                  <% count += 1 %>
+                <% end %>
+              </small>
           </div>
           <p class="card-trip-pricing">From <%= movie.showtimes.map { |showtime| showtime.price_per_seat }.min %> €</p>
         </div>
