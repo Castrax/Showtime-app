@@ -1,13 +1,10 @@
 const geoloc = () => {
-  const button = document.querySelector('.geoloc');
-  const buttonFind = document.querySelector('.btn');
-  button.addEventListener('click', (event) => {
-    event.preventDefault();
-    navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
-  });
-  buttonFind.addEventListener('click', (event) => {
-    event.preventDefault();
-    navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
+  const buttons = document.querySelectorAll('.geoloc');
+  buttons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      event.preventDefault();
+      navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
+    });
   });
 
   const successCallback = (event) => {
