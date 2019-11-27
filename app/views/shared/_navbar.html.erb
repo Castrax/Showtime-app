@@ -5,9 +5,7 @@
         <i class="fas fa-arrow-alt-circle-left" style="font-size: 3rem;"></i>
       <% end %>
     <% end %>
-    <% if params[:lng].present? && params[:lat].present? %>
-      <p><%= @geolocation.suburb %> - <%= @geolocation.city %></p>
-    <% end %>
+    <p><%= @geolocation.suburb %> - <%= @geolocation.city %></p>
     <% if action_name == "show" %>
     <img class="avatar-index dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/castrax" />
     <% else %>

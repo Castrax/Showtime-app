@@ -2,15 +2,11 @@ class MoviesController < ApplicationController
   def index
     session[:longitude] = params[:lng]
     session[:latitude] = params[:lat]
-    if session[:longitude].present? && session[:latitude].present?
-      @geolocation = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first
-      @theaters = Theater.geocoded.near([params[:lat], params[:lng]], 5)
-      idstheaters = @theaters.collect(&:id)
-      @showtimes = Showtime.where(theater_id: idstheaters)
-      @movies = Movie.where(id: @showtimes.distinct.pluck(:movie_id))
-    else
-      @movies = Movie.all
-    end
+    @geolocation = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first
+    @theaters = Theater.geocoded.near([session[:latitude].to_f, session[:longitude].to_f], 5)
+    idstheaters = @theaters.collect(&:id)
+    @showtimes = Showtime.where(theater_id: idstheaters)
+    @movies = Movie.where(id: @showtimes.distinct.pluck(:movie_id))
   end
 
   def show
