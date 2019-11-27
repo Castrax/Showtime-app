@@ -1,7 +1,13 @@
 <div class="header-poster">
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @movie.photos.first.key %>);">
+  <% if @movie.photos.attached? %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @movie.photos.first.key %>);">
       <h1><%= @movie.title %></h1>
-  </div>
+    </div>
+  <% else %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path("unknown_mn7pzj.png") %>);">
+      <h1><%= @movie.title %></h1>
+    </div>
+  <% end %>
   <div class="container">
     <div class="movie-infos">
       <p><%= @movie.category %> (<%= @movie.duration %>)</p>

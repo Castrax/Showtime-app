@@ -1,9 +1,11 @@
 <div class="container-index">
+  <!-- Best Deals -->
   <h2>Best Deals</h2>
     <% @movies.each do |movie| %>
       <% if movie.almost_finished? %>
-      <%= render 'best_deal' %>
+      <%= render './shared/best_deal_index' %>
       <% end %>
     <% end %>
-  <%= render 'card' %>
+  <!-- Category list -->
+  <%= render './shared/card_index' %>
 </div>
