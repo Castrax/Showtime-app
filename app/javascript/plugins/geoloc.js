@@ -9,7 +9,7 @@ const geoloc = () => {
     const crd = event.coords;
     const lat = crd.latitude;
     const long = crd.longitude;
-    window.location.replace(`http://localhost:3000/movies?lng=${long}&lat=${lat}`);
+    window.location.replace(`/movies?lng=${long}&lat=${lat}`);
   };
 
   const errorCallback = (err) => {
