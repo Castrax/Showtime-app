@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
   def index
     @movies = Movie.all
     @theaters = Theater.geocoded.near([params[:lng], params[:lat]], 50)
+    @categories = Movie.distinct.pluck(:category)
   end
 
   def show
