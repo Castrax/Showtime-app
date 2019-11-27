@@ -5,7 +5,6 @@
         <i class="fas fa-arrow-alt-circle-left" style="font-size: 3rem;"></i>
       <% end %>
     <% end %>
-<!--     <%= request.env %> -->
     <% if params[:lng].present? && params[:lat].present? %>
       <p><%= @geolocation.suburb %> - <%= @geolocation.city %></p>
     <% end %>
