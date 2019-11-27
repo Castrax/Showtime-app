@@ -7,6 +7,5 @@ class ApplicationController < ActionController::Base
   def set_coordinates
     session[:longitude] = params[:lng]
     session[:latitude] = params[:lat]
-    @geolocation = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first
   end
 end
