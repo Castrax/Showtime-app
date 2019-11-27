@@ -1,23 +1,21 @@
 <% @movies.each do |movie| %>
   <% if movie.almost_finished? %>
-    <%= link_to movie_path(movie) do %>
-      <div class="card-trip">
-        <% if movie.photos.attached? %>
-          <%= cl_image_tag movie.photos.first.key, width: 304, height: 304, crop: :thumb, gravity: :face %>
-        <% else %>
-          <%= cl_image_tag("unknown_mn7pzj.png", :width=>304, :crop=>"scale") %>
-        <% end %>
-        <div class="card-trip-infos">
-          <div>
-            <h3><%= movie.title %></h3>
-            <p><% movie.rating.to_i.times do %>
-              <i class="fas fa-star"></i>
-              <% end %>
-            </p>
-          </div>
-          <p class="card-trip-pricing">From <%= movie.showtimes.map { |showtime| showtime.price_per_seat }.min %> €</p>
-        </div>
-      </div>
+  <div class="card-trip">
+    <% if movie.photos.attached? %>
+      <%= cl_image_tag movie.photos.first.key, width: 304, height: 304, crop: :thumb, gravity: :face %>
+    <% else %>
+      <%= cl_image_tag("unknown_mn7pzj.png", :width=>304, :crop=>"scale") %>
     <% end %>
+  <div class="card-trip-infos">
+    <div>
+      <h3><%= movie.title %></h2>
+      <p><% movie.rating.to_i.times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+      </p>
+    </div>
+    <p class="card-trip-pricing">From <%= movie.showtimes.map { |showtime| showtime.price_per_seat }.min %> €</p>
+  </div>
+  </div>
   <% end %>
 <% end %>
