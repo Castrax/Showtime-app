@@ -9,23 +9,38 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   flex-direction: column;
   text-align: center;
-  padding-top: 1rem;
+  padding: 1rem 0;
   display: flex;
   color: $st-body-color;
+
+  .key-elements{
+  font-weight: bold;
+  margin: 10px;
+  }
+
+  .movie-description {
+    text-align: justify;
+    font-style: italic;
+    border-bottom: dotted 0.5px black;
+    border-top: dotted 0.5px black;
+    padding: 1rem 0;
+  }
 }
 
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
-  text-align: center;
-  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin-top: 7px;
+  height: 25vh;
 
   h1 {
     margin: 0;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 2em;
-    font-weight: bold;
+    font-weight: inherit;
     color: $st-babypowder;
     }
 }
