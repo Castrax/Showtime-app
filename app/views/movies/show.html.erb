@@ -10,11 +10,23 @@
   <% end %>
   <div class="container">
     <div class="movie-infos">
+      <div class="list-group">
+          <small>
+            <% count = 0 %>
+            <% 5.times do %>
+              <% if @movie.rating.round > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+              <% count += 1 %>
+            <% end %>
+          </small>
+      </div>
       <p><%= @movie.category %> (<%= @movie.duration %>)</p>
       <p>Director: <span><%= @movie.director %></span> </p>
       <p>Cast:<span><%= @movie.cast %></span></p>
       <p><%= @movie.description %></p>
-      <p><%= @movie.rating %> / 5</p>
     </div>
     <h2>Showtimes around you</h2>
     <div class="movie-showtimes">
