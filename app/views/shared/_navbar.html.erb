@@ -1,6 +1,5 @@
 <div class="container">
   <div class="navbar navbar-expand-sm navbar-light">
-<!--     <%= request.env %> -->
     <% if params[:lng].present? && params[:lat].present? %>
       <p><%= @geolocation.suburb %> - <%= @geolocation.city %></p>
     <% end %>
