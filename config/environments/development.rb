@@ -1,4 +1,4 @@
-require 'ipinfo-rails'
+# require 'ipinfo-rails'
 
 Rails.application.configure do
   config.action_mailer.default_url_options = { host: "http://localhost:3000" }
@@ -10,7 +10,7 @@ Rails.application.configure do
   config.cache_classes = false
 
   #IPinfo config
-  config.middleware.use(IPinfoMiddleware, {token: "44eb13e50e841d"})
+  # config.middleware.use(IPinfoMiddleware, {token: "44eb13e50e841d"})
 
   # Do not eager load code on boot.
   config.eager_load = false
