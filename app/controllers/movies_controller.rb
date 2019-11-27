@@ -11,6 +11,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
+    @geolocation = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first
     @theater = Theater.geocoded #à modifier quand on aura la géoloc : chercher les cinémas dont la distance avec le current_user est < à 5km + afficher les cinémas par ordre croissant de distance dans la show).
     @showtimes = Showtime.where(movie_id: @movie, theater_id: @theater)
   end
