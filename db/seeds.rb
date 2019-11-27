@@ -15,7 +15,7 @@ u1 = User.create(email: "coco@coco.com", password: "testtest")
 
 t1 = Theater.create(name: "Louxor", address: "Bd de Magenta")
 
-m1 = Movie.create(title: "Hors Normes", director: "Toledano", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Drame", duration: "1h45", rating: 4.5)
+m1 = Movie.create(title: "Hors Normes", director: "Toledano", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Drame", duration: "1h45", rating: 4.5, almost_finished?: true)
 
 hors_normes_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574769804/Peq7qpj2jnSUfHBVL1wTiyLF.jpg")
 m1.photos.attach(io: hors_normes_1, filename: 'hors_normes-1.jpg', content_type: 'image/jpg')
@@ -37,6 +37,10 @@ m2.save
 
 m3 = Movie.create(title: "La Reine des neiges 2", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h45", rating: 4.9)
 
+m4 = Movie.create(title: "Le Roi Lion", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h50", rating: 5)
+roi_lion_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574860505/images_pe8e7l.jpg")
+m4.photos.attach(io: roi_lion_1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
+
 s1 = Showtime.new(empty_seats: 15, price_per_seat: 4)
 s1.movie = m1
 s1.theater = t1
@@ -47,7 +51,6 @@ s2.movie = m1
 s2.theater = t1
 s2.save
 
-
 s3 = Showtime.new(empty_seats: 15, price_per_seat: 4)
 s3.movie = m2
 s3.theater = t1
@@ -57,5 +60,10 @@ s4 = Showtime.new(empty_seats: 25, price_per_seat: 3)
 s4.movie = m2
 s4.theater = t1
 s4.save
+
+s5 = Showtime.new(empty_seats: 25, price_per_seat: 3)
+s5.movie = m4
+s5.theater = t1
+s5.save
 
 puts "C'est bon :)"

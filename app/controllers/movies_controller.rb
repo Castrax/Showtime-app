@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
   def index
+    @theaters = Theater.geocoded.near([params[:lng], params[:lat]], 50)
+    @categories = Movie.distinct.pluck(:category)
     session[:longitude] = params[:lng]
     session[:latitude] = params[:lat]
     @geolocation = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first
@@ -22,5 +24,3 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:title, :description, :category, :director, :cast, :duration, :rating)
   end
 end
-
-# test

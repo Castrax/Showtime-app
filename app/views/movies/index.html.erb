@@ -1,12 +1,23 @@
 <div class="container-index">
   <!-- Best Deals -->
   <h2>Best Deals</h2>
+  <div class="siema">
     <% @movies.each do |movie| %>
       <% if movie.almost_finished? %>
-      <%= render './shared/best_deal_index' %>
+      <!-- Carrousel for each best deals card -->
+          <div><%= render './shared/card_index', movie: movie %></div>
       <% end %>
     <% end %>
+  </div>
+
+
   <!-- Category list -->
-  <%= render './shared/card_index' %>
+  <% @categories.each do |category| %>
+    <h2><%= category %></h2>
+      <div class="siema">
+      <% @movies.where(category: category).each do |movie| %>
+          <div><%= render './shared/card_index', movie: movie %></div>
+      <% end %>
+    </div>
+  <% end %>
 </div>
- <!-- test -->
