@@ -21,3 +21,5 @@ class MoviesController < ApplicationController
     params.require(:movie).permit(:title, :description, :category, :director, :cast, :duration, :rating)
   end
 end
+
+# test
