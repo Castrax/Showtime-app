@@ -37,26 +37,29 @@ m2.save
 
 m3 = Movie.create(title: "La Reine des neiges 2", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h45", rating: 4.9)
 
+
 m4 = Movie.create(title: "Le Roi Lion", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h50", rating: 5)
 roi_lion_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574860505/images_pe8e7l.jpg")
 m4.photos.attach(io: roi_lion_1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
 
-s1 = Showtime.new(empty_seats: 15, price_per_seat: 4)
+s1 = Showtime.new(empty_seats: 15, price_per_seat: 4, start_hour: DateTime.new(2019,12,06,20,37,48))
+
 s1.movie = m1
 s1.theater = t1
 s1.save
 
-s2 = Showtime.new(empty_seats: 25, price_per_seat: 3)
+s2 = Showtime.new(empty_seats: 25, price_per_seat: 3, start_hour: DateTime.new(2019,12,06,20,37,48))
 s2.movie = m1
 s2.theater = t1
 s2.save
 
-s3 = Showtime.new(empty_seats: 15, price_per_seat: 4)
+s3 = Showtime.new(empty_seats: 17, price_per_seat: 4, start_hour: DateTime.new(2019,12,06,20,37,48))
+
 s3.movie = m2
 s3.theater = t1
 s3.save
 
-s4 = Showtime.new(empty_seats: 25, price_per_seat: 3)
+s4 = Showtime.new(empty_seats: 37, price_per_seat: 3, start_hour: DateTime.new(2019,12,06,20,37,48))
 s4.movie = m2
 s4.theater = t1
 s4.save
