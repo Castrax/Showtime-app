@@ -1,7 +1,10 @@
 <%= link_to movie_path(movie) do %>
   <div class="card-trip">
     <% if movie.photos.attached? %>
-      <%= cl_image_tag movie.photos.first.key, width: 304, height: 304, crop: :thumb, gravity: :face %>
+      <div class="banner-index" style="background-image: url(<%= cl_image_path movie.photos.first.key %>);">
+        <%= cl_image_tag movie.photos.first.key, width: 304, height: 304, crop: :thumb, gravity: :face %>
+        <i class="far fa-heart" id="add-favorite"></i>
+      </div>
     <% else %>
       <%= cl_image_tag("unknown_mn7pzj.png", :width=>304, :crop=>"scale") %>
     <% end %>
