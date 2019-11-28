@@ -21,6 +21,7 @@ gem 'geocoder'
 gem 'octicons'
 gem 'octicons_helper'
 gem 'money-rails'
+gem 'httparty'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

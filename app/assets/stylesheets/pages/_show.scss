@@ -6,7 +6,6 @@
 }
 
 .movie-infos {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   flex-direction: column;
   text-align: center;
   padding: 1rem 0;
@@ -20,11 +19,17 @@
 
   .movie-description {
     text-align: justify;
-    font-style: italic;
-    border-bottom: dotted 0.5px black;
-    border-top: dotted 0.5px black;
+    font-style: $headers-font;
+    // font-style: italic;
+    // border-bottom: dotted 0.5px black;
+    // border-top: dotted 0.5px black;
     padding: 1rem 0;
   }
+}
+
+
+.card {
+  margin: 1rem;
 }
 
 .banner {
