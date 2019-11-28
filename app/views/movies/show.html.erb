@@ -45,7 +45,7 @@
           <div class="card-body" data-toggle="modal" data-target="#showtimesModal-<%=showtime.id%>">
             <h5 class="card-title"><%= showtime.start_hour.strftime("%Hh%M") %> - <%= showtime.end_hour.strftime("%Hh%M") %></h5>
             <p class="card-text"><%= showtime.empty_seats %> empty seats</p>
-            <p class="card-text"><%= showtime.price %> € (/seat)</p>
+            <p class="card-text"><%= showtime.price * 100 %> € (/seat)</p>
             <p class="card-text"><%=  %>km</p>
           </div>
           <% end %>
@@ -66,7 +66,7 @@
           </div>
           <div class="modal-body">
             <p><%= showtime.empty_seats %> empty seats</p>
-            <p><%= showtime.price %> € (/seat)</p>
+            <p><%= showtime.price * 100 %> € (/seat)</p>
             <%= showtime.start_hour %>
             <div class="input-group">
               <span class="input-group-btn">
