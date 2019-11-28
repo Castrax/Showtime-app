@@ -39,26 +39,29 @@
     <h2 style="text-align: center">Showtimes around you</h2>
     <div class="movie-showtimes">
       <div class="card">
-        <h5 class="card-header"><%= @theater.name %></h5>
-        <% @showtimes.each do |showtime| %>
+        <% @theaters.each do |theater| %>
+         <h5 class="card-header"><%= theater.name %></h5>
+          <% theater.showtimes.where(movie_id: @movie.id).each do |showtime| %>
           <div class="card-body" data-toggle="modal" data-target="#showtimesModal-<%=showtime.id%>">
-            <h5 class="card-title"><%= showtime.start_hour %> - <%= showtime.end_hour %></h5>
+            <h5 class="card-title"><%= showtime.start_hour.strftime("%Hh%M") %> - <%= showtime.end_hour.strftime("%Hh%M") %></h5>
             <p class="card-text"><%= showtime.empty_seats %> empty seats</p>
-            <p class="card-text"><%= showtime.price_per_seat %> € (/seat)</p>
+            <p class="card-text"><%= showtime.price %> € (/seat)</p>
+            <p class="card-text"><%= theater.distance_to([session[:latitude], session[:longitude]])%>km</p>
           </div>
+          <% end %>
         <% end %>
       </div>
-    </div>
   </div>
 </div>
 
 <!-- Modal -->
-<% @showtimes.each do |showtime| %>
-  <div class="modal fade" id="showtimesModal-<%= showtime.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel"><%= @movie[:title] %></h5>
+<% @theaters.each do |theater| %>
+  <% theater.showtimes.where(movie_id: @movie.id).each do |showtime| %>
+    <div class="modal fade" id="showtimesModal-<%= showtime.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><%= @movie[:title] %></h5>
         </div>
         <div class="modal-body">
           <p><%= showtime.empty_seats %> empty seats</p>
@@ -76,19 +79,15 @@
                 <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg>
               </button>
             </span>
-          </div>
-          <div class="number-seats">
-          </div>
           <div>
             <p> <strong>TOTAL PRICE: <span class="total-price"></span> €</strong></p>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Book</button>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <button type="button" class="btn btn-primary">Book</button>
         </div>
       </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
