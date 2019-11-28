@@ -7,7 +7,7 @@
     <% end %>
     <p><%= Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first.suburb %> - <%= Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first.city %></p>
     <% if action_name == "show" %>
-    <img class="avatar-index dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/castrax" />
+    <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/castrax" />
     <% else %>
     <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/castrax" />
     <% end %>
