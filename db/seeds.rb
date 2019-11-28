@@ -40,33 +40,34 @@ m4 = Movie.create(title: "Le Roi Lion", director: "Chris Buck", description: "Lo
 roi_lion_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574939527/HK36evkHSb382pVzJ32oJbRv.jpg")
 m4.photos.attach(io: roi_lion_1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
 
-s1 = Showtime.new(empty_seats: 15, price_per_seat: 4, start_hour: DateTime.new(2019,12,06,20,37,48))
 
+s1 = Showtime.new(empty_seats: 15, price_cents: 4, start_hour: DateTime.new(2019,12,06,12,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
 s1.movie = m1
 s1.theater = t1
 s1.save
 
-s2 = Showtime.new(empty_seats: 25, price_per_seat: 3, start_hour: DateTime.new(2019,12,06,20,37,48))
+s2 = Showtime.new(empty_seats: 25, price_cents: 3, start_hour: DateTime.new(2019,12,06,14,00,00), end_hour: DateTime.new(2019,12,06,15,47,00))
 s2.movie = m1
 s2.theater = t1
 s2.save
 
-s3 = Showtime.new(empty_seats: 17, price_per_seat: 4, start_hour: DateTime.new(2019,12,06,20,37,48))
+s3 = Showtime.new(empty_seats: 17, price_cents: 4, start_hour: DateTime.new(2019,12,06,15,00,00), end_hour: DateTime.new(2019,12,06,16,47,00))
 s3.movie = m2
 s3.theater = t1
 s3.save
 
-s4 = Showtime.new(empty_seats: 37, price_per_seat: 3, start_hour: DateTime.new(2019,12,06,20,37,48))
+s4 = Showtime.new(empty_seats: 37, price_cents: 3, start_hour: DateTime.new(2019,12,06,16,00,00), end_hour: DateTime.new(2019,12,06,17,47,00))
 s4.movie = m2
 s4.theater = t1
 s4.save
 
-s5 = Showtime.new(empty_seats: 25, price_per_seat: 3)
+
+s5 = Showtime.new(empty_seats: 25, price_cents: 3, start_hour: DateTime.new(2019,12,06,17,00,00), end_hour: DateTime.new(2019,12,06,18,47,00))
 s5.movie = m4
 s5.theater = t1
 s5.save
 
-s6 = Showtime.new(empty_seats: 25, price_per_seat: 3)
+s6 = Showtime.new(empty_seats: 25, price_cents: 3, start_hour: DateTime.new(2019,12,06,18,00,00), end_hour: DateTime.new(2019,12,06,19,47,00))
 s6.movie = m3
 s6.theater = t1
 s6.save

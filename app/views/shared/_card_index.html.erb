@@ -22,7 +22,7 @@
           </small>
         </div>
       </div>
-    <p class="card-trip-pricing">From <%= movie.showtimes.map { |showtime| showtime.price_per_seat }.min %> €</p>
+    <p class="card-trip-pricing">From <%= movie.showtimes.map { |showtime| showtime.price }.min %> €</p>
     </div>
   </div>
 <% end %>
