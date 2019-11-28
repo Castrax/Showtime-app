@@ -36,6 +36,7 @@
         <p><%= @movie.description %></p>
       </div>
     </div>
+
     <div><%= render './shared/showtimes_cards' %>
     </div>
   </div>
@@ -51,7 +52,7 @@
         </div>
         <div class="modal-body">
           <p><%= showtime.empty_seats %> empty seats</p>
-          <p><%= showtime.price_per_seat %> € (/seat)</p>
+          <p><%= showtime.price %> € (/seat)</p>
           <%= showtime.start_hour %>
           <div class="input-group">
             <span class="input-group-btn">
@@ -79,4 +80,3 @@
     </div>
   </div>
 <% end %>
-
