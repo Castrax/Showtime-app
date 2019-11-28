@@ -1,0 +1,176 @@
+
+.fl-left{float: center}
+
+.container-conf
+{
+  width: 90%;
+  margin: 2rem auto;
+}
+
+
+.row{overflow: hidden}
+
+.cardconf
+{
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  grid-template-columns: none;
+  grid-template-rows: 100px 1fr;
+  background-color: #fff;
+  margin-bottom: 10px;
+  font-family: $body-font;
+  text-transform: uppercase;
+  border-radius: 4px;
+  position: relative;
+}
+
+.cardconf + .cardconf{margin-left: 2%}
+
+.date
+{
+  width: 100%;
+  position: relative;
+  text-align: center;
+  border-bottom: 2px dashed #dadde6
+}
+
+.date:before,
+.date:after
+{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-color: #F9F9F9;
+  position: absolute;
+  top: 83px ;
+  right: -15px;
+  z-index: 1;
+  border-radius: 50%
+}
+
+.date:after
+{
+  top: auto;
+  bottom: -15px;
+  right: 290px;
+}
+
+.date time
+{
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%)
+}
+
+.date time span{display: block}
+
+.date time span:first-child
+{
+  color: #2b2b2b;
+  font-weight: 600;
+  font-size: 250%
+}
+
+.date time span:last-child
+{
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: -10px
+}
+
+.cardconf-cont
+{
+  width: 100%;
+  font-size: 85%;
+  padding: 3rem 2rem;
+}
+
+.cardconf-cont h3
+{
+  color: #3C3C3C;
+  font-size: 130%
+}
+
+.row:last-child .cardconf:last-of-type .cardconf-cont h3
+{
+  text-decoration: none;
+}
+
+.cardconf-cont > .even-date, .even-info
+{
+  padding-left: 1rem;
+}
+
+.cardconf-cont .even-date i,
+.cardconf-cont .even-info i,
+.cardconf-cont .even-date time,
+.cardconf-cont .even-info p
+{
+  display: table-cell
+}
+
+.cardconf-cont .even-date i,
+.cardconf-cont .even-info i
+{
+  padding: 5% 5% 0 0
+}
+
+.cardconf-cont .even-info p
+{
+  padding: 1rem 0 0 0;
+}
+
+.cardconf-cont .even-date time span
+{
+  display: block
+}
+
+.cardconf-cont a
+{
+  display: block;
+  text-decoration: none;
+  width: 80px;
+  height: 30px;
+  background-color: #D8DDE0;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  border-radius: 2px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px
+}
+
+.row:last-child .cardconf:first-child .cardconf-cont a
+{
+  background-color: #037FDD
+}
+
+.row:last-child .cardconf:last-child .cardconf-cont a
+{
+  background-color: #F8504C
+}
+
+.status {
+  margin-top: 2rem !important;
+  text-align: center;
+}
+
+.conf-header {
+  text-align: center;
+}
+
+.add-wallet {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.conf-bg {
+  background-color: #F9F9F9;
+}
