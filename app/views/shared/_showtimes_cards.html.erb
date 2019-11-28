@@ -5,7 +5,7 @@
       <div class="card-body" data-toggle="modal" data-target="#showtimesModal-<%=showtime.id%>">
         <h5 class="card-title"><%= showtime.start_hour.strftime("%Hh%M") %> - <%= showtime.end_hour.strftime("%Hh%M") %></h5>
         <p class="card-text"><%= showtime.empty_seats %> empty seats</p>
-        <p class="card-text"><%= showtime.price_per_seat %> € (/seat)</p>
+        <p class="card-text"><%= showtime.price %> € (/seat)</p>
       </div>
     <% end %>
   </div>
