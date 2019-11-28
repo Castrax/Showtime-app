@@ -27,19 +27,17 @@ m1.save
 
 m2 = Movie.create(title: "Les Misérables", director: "Ly", description: "Stéphane, tout juste arrivé de Cherbourg, intègre la Brigade Anti-Criminalité de Montfermeil, dans le 93. Il va faire la rencontre de ses nouveaux coéquipiers, Chris et Gwada, deux \"Bacqueux\" d’expérience. Il découvre rapidement les tensions entre les différents groupes du quartier.", category: "Policier", duration: "1h42", rating: 4.3, almost_finished?: true)
 
-les_miserables_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574769806/k7f84JmviBRVAvPtP6kLU7SQ.jpg")
+les_miserables_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574939523/GWdkWbPUx9aiQWkMp24gA79j.jpg")
 m2.photos.attach(io: les_miserables_1, filename: 'les_miserables-1.jpg', content_type: 'image/jpg')
-les_miserables_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574769806/k7f84JmviBRVAvPtP6kLU7SQ.jpg")
+les_miserables_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574935896/xkwDkNYn51GZZmrcfbFPHdve.jpg")
 m2.photos.attach(io: les_miserables_2, filename: 'les_miserables-2.jpg', content_type: 'image/jpg')
-les_miserables_3 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574769805/s9Qo345ksNvQEMcVuEMEDMDZ.jpg")
-m2.photos.attach(io: les_miserables_3, filename: 'les_miserables-3.jpg', content_type: 'image/jpg')
 m2.save
 
 m3 = Movie.create(title: "La Reine des neiges 2", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h45", rating: 4.9)
 
 
 m4 = Movie.create(title: "Le Roi Lion", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h50", rating: 5)
-roi_lion_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574860505/images_pe8e7l.jpg")
+roi_lion_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574939527/HK36evkHSb382pVzJ32oJbRv.jpg")
 m4.photos.attach(io: roi_lion_1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
 
 s1 = Showtime.new(empty_seats: 15, price_per_seat: 4, start_hour: DateTime.new(2019,12,06,20,37,48))
