@@ -82,8 +82,11 @@
           <div>
             <p> <strong>TOTAL PRICE: <span class="total-price"></span> €</strong></p>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Book</button>
+            <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'showtime_id', showtime.id %>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              <%= submit_tag 'Book', class: 'btn btn-primary' %>
+            <% end %>
           </div>
         </div>
       </div>

@@ -6,5 +6,8 @@ Rails.application.routes.draw do
       resources :theaters, only: [:index]
       end
     end
+  resources :orders, only: [:show, :create] do
+    resources :payments, only: :new
+    end
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.htmls
