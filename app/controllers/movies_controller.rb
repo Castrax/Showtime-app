@@ -1,7 +1,11 @@
 class MoviesController < ApplicationController
   def index
     @categories = Movie.distinct.pluck(:category)
-    @theaters = Theater.geocoded.near([session[:latitude].to_f, session[:longitude].to_f], 5)
+    if session[:latitude].nil?
+      @theaters = Theater.all
+    else
+      @theaters = Theater.geocoded.near([session[:latitude].to_f, session[:longitude].to_f], 5)
+    end
     idstheaters = @theaters.collect(&:id)
     @showtimes = Showtime.where(theater_id: idstheaters)
     @movies = Movie.where(id: @showtimes.distinct.pluck(:movie_id))
