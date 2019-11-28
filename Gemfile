@@ -20,6 +20,7 @@ gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
 gem 'octicons'
 gem 'octicons_helper'
+gem 'money-rails'
 gem 'httparty'
 
 group :development do

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_150443) do
+ActiveRecord::Schema.define(version: 2019_11_28_113240) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,20 +36,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_150443) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "bookings", force: :cascade do |t|
-    t.integer "number_of_seats"
-    t.integer "total_price"
-    t.string "showtime_sku"
-    t.string "checkout_session_id"
-    t.string "state"
-    t.bigint "showtime_id"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["showtime_id"], name: "index_bookings_on_showtime_id"
-    t.index ["user_id"], name: "index_bookings_on_user_id"
-  end
-
   create_table "movies", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -73,6 +59,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_150443) do
     t.bigint "theater_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["movie_id"], name: "index_showtimes_on_movie_id"
     t.index ["theater_id"], name: "index_showtimes_on_theater_id"
   end
@@ -99,8 +86,6 @@ ActiveRecord::Schema.define(version: 2019_11_26_150443) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "bookings", "showtimes"
-  add_foreign_key "bookings", "users"
   add_foreign_key "showtimes", "movies"
   add_foreign_key "showtimes", "theaters"
 end
