@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_28_113240) do
+ActiveRecord::Schema.define(version: 2019_11_28_143337) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,19 @@ ActiveRecord::Schema.define(version: 2019_11_28_113240) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "almost_finished?"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "showtime_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id"
+    t.bigint "showtime_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["showtime_id"], name: "index_orders_on_showtime_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "showtimes", force: :cascade do |t|
@@ -86,6 +99,8 @@ ActiveRecord::Schema.define(version: 2019_11_28_113240) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "orders", "showtimes"
+  add_foreign_key "orders", "users"
   add_foreign_key "showtimes", "movies"
   add_foreign_key "showtimes", "theaters"
 end
