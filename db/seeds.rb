@@ -57,6 +57,7 @@ s3 = Showtime.new(empty_seats: 17, price_per_seat: 4, start_hour: DateTime.new(2
 s3.movie = m2
 s3.theater = t1
 s3.save
+#hello
 
 s4 = Showtime.new(empty_seats: 37, price_per_seat: 3, start_hour: DateTime.new(2019,12,06,16,00,00), end_hour: DateTime.new(2019,12,06,17,47,00))
 s4.movie = m2
