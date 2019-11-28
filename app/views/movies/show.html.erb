@@ -46,7 +46,7 @@
             <h5 class="card-title"><%= showtime.start_hour.strftime("%Hh%M") %> - <%= showtime.end_hour.strftime("%Hh%M") %></h5>
             <p class="card-text"><%= showtime.empty_seats %> empty seats</p>
             <p class="card-text"><%= showtime.price %> € (/seat)</p>
-            <p class="card-text"><%=  %>km</p>
+            <p class="card-text"><%= theater.distance_to([session[:latitude], session[:longitude]])%>km</p>
           </div>
           <% end %>
         <% end %>
