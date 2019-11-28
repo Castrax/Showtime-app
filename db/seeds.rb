@@ -18,7 +18,7 @@ t1 = Theater.create(name: "Louxor", address: "Bd de Magenta")
 
 m1 = Movie.create(title: "Hors Normes", director: "Toledano", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Drame", duration: "1h45", rating: 4.5, almost_finished?: true)
 
-hors_normes_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574769804/Peq7qpj2jnSUfHBVL1wTiyLF.jpg")
+hors_normes_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574768528/k7e3xntpf3jpkbdr2wev.jpg")
 m1.photos.attach(io: hors_normes_1, filename: 'hors_normes-1.jpg', content_type: 'image/jpg')
 hors_normes_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574768528/k7e3xntpf3jpkbdr2wev.jpg")
 m1.photos.attach(io: hors_normes_2, filename: 'hors_normes-2.jpg', content_type: 'image/jpg')
