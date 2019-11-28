@@ -1,3 +1,4 @@
+require 'open-uri'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -27,7 +28,7 @@ m1.save
 
 m2 = Movie.create(title: "Les Misérables", director: "Ly", description: "Stéphane, tout juste arrivé de Cherbourg, intègre la Brigade Anti-Criminalité de Montfermeil, dans le 93. Il va faire la rencontre de ses nouveaux coéquipiers, Chris et Gwada, deux \"Bacqueux\" d’expérience. Il découvre rapidement les tensions entre les différents groupes du quartier.", category: "Policier", duration: "1h42", rating: 4.3, almost_finished?: true)
 
-les_miserables_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574939523/GWdkWbPUx9aiQWkMp24gA79j.jpg")
+les_miserables_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574941689/cAo4839y28yiCv9G7NX9ihuz.jpg")
 m2.photos.attach(io: les_miserables_1, filename: 'les_miserables-1.jpg', content_type: 'image/jpg')
 les_miserables_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574935896/xkwDkNYn51GZZmrcfbFPHdve.jpg")
 m2.photos.attach(io: les_miserables_2, filename: 'les_miserables-2.jpg', content_type: 'image/jpg')
