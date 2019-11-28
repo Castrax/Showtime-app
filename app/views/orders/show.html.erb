@@ -1,2 +1,38 @@
-TO DO MATHIDE
-Kisses
+<div class="container-conf">
+  <div class="row">
+    <div class="col">
+      <div class="cardconf fl-left">
+        <div class="date">
+         <time datetime="23th feb">
+          <% time = Time.new %>
+          <%= time.strftime("%d of %B, %Y") %>
+        </time>
+        </div>
+        <div class="cardconf-cont">
+          <div class="conf-header">
+            <small><%= @order.showtime.movie.category %></small>
+            <h3><%= @order.showtime.movie.title %></h3>
+          </div>
+          <div class="even-date">
+           <i class="fa fa-calendar"></i>
+           <time>
+             <span>from <%= @order.showtime.start_hour %> to <%= @order.showtime.end_hour %></span>
+           </time>
+          </div>
+          <div class="even-info">
+            <i class="fa fa-map-marker"></i>
+            <p>
+              <%= @order.showtime.theater.name %>, <%= @order.showtime.theater.address %>
+            </p>
+          </div>
+          <div class="status">
+            <%= @order.state %>
+          </div>
+          <div class="add-wallet">
+            <%= render './shared/add_wallet_badge' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
