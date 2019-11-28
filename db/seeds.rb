@@ -54,7 +54,6 @@ s2.theater = t1
 s2.save
 
 s3 = Showtime.new(empty_seats: 17, price_per_seat: 4, start_hour: DateTime.new(2019,12,06,20,37,48))
-
 s3.movie = m2
 s3.theater = t1
 s3.save
@@ -68,5 +67,10 @@ s5 = Showtime.new(empty_seats: 25, price_per_seat: 3)
 s5.movie = m4
 s5.theater = t1
 s5.save
+
+s6 = Showtime.new(empty_seats: 25, price_per_seat: 3)
+s6.movie = m3
+s6.theater = t1
+s6.save
 
 puts "C'est bon :)"
