@@ -36,13 +36,26 @@
         <p><%= @movie.description %></p>
       </div>
     </div>
-
-    <div><%= render './shared/showtimes_cards' %>
-    </div>
+    <h2 style="text-align: center">Showtimes around you</h2>
+    <div class="movie-showtimes">
+      <div class="card">
+        <% @theaters.each do |theater| %>
+         <h5 class="card-header"><%= theater.name %></h5>
+          <% theater.showtimes.where(movie_id: @movie.id).each do |showtime| %>
+          <div class="card-body" data-toggle="modal" data-target="#showtimesModal-<%=showtime.id%>">
+            <h5 class="card-title"><%= showtime.start_hour.strftime(“%Hh%M”) %> - <%= showtime.end_hour.strftime(“%Hh%M”) %></h5>
+            <p class="card-text"><%= showtime.empty_seats %> empty seats</p>
+            <p class="card-text"><%= showtime.price %> € (/seat)</p>
+            <p class="card-text"><%=  %>km</p>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
   </div>
 </div>
 
 <!-- Modal -->
+
 <% @showtimes.each do |showtime| %>
   <div class="modal fade" id="showtimesModal-<%= showtime.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -80,3 +93,4 @@
     </div>
   </div>
 <% end %>
+
