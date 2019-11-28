@@ -1,9 +1,4 @@
-<div class="modal fade" id="showtimesModal-<%= showtime.empty_seats %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"><%= @movie[:title] %></h5>
-      </div> <!-- modal-header -->
+
       <div class="modal-body">
         <p><%= showtime.empty_seats %> empty seats</p>
         <p><span class="price-per-seat"><%= showtime.price * 100 %></span> € (/seat)</p>
@@ -20,22 +15,5 @@
               <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg>
             </button>
           </span>
-        </div>
-        <div class="number-seats">
-        </div>
-        <div class="total-price">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <p> <strong>TOTAL PRICE: <span class="total-price"></span> €</strong></p>
-        <%= form_tag orders_path do %>
-          <%= hidden_field_tag 'showtime_id', showtime.id %>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-          <%= submit_tag 'Book', class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-    </div> <!-- modal-content -->
-  </div> <!-- modal-dialog -->
-</div> <!-- modal -->
-
-
+        <div> <!-- input-group -->
+      <div> <!-- modal-body -->
