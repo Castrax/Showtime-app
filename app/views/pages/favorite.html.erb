@@ -1,0 +1,3 @@
+<% @movies.first(2).each do |movie| %>
+<div><%= render './shared/card_index', movie: movie %></div>
+<% end %>

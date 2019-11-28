@@ -37,3 +37,19 @@
 .fa-star {
   color: orange;
 }
+
+#add-favorite {
+  position: relative;
+  bottom: 268px;
+  right: 22px;
+  font-size: x-large;
+  color: $st-desire;
+  font-size: 2rem;
+}
+
+.transition{
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition:all 0.5s ease-in-out;
+  -o-transition:all 0.5s ease-in-out;
+  transition:all 0.5s ease-in-out;
+}

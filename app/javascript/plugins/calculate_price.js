@@ -1,7 +1,5 @@
 const calculatePrice = () => {
 
-  console.log("salut");
-
   let number_of_seats_string = document.querySelector('#number-of-seats');
   let counter = 1
   const plus = document.querySelector('#plus');
