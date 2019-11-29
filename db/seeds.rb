@@ -22,6 +22,8 @@ u1 = User.create(email: "coco@coco.com", password: "testtest")
 puts "Creating t1..."
 
 t1 = Theater.create(name: "Louxor", address: "Bd de Magenta")
+t2 = Theater.create(name: "Majestic Bastille", address: "4 bd de Richard Lenoir")
+
 
 puts "Creating m1..."
 
@@ -60,7 +62,7 @@ s1.save
 
 s2 = Showtime.new(empty_seats: 25, price_cents: 300, sku: "12345B", start_hour: DateTime.new(2019,12,06,14,00,00), end_hour: DateTime.new(2019,12,06,15,47,00))
 s2.movie = m1
-s2.theater = t1
+s2.theater = t2
 s2.save
 
 s3 = Showtime.new(empty_seats: 17, price_cents: 400, sku: "12345C", start_hour: DateTime.new(2019,12,06,15,00,00), end_hour: DateTime.new(2019,12,06,16,47,00))
@@ -70,7 +72,7 @@ s3.save
 
 s4 = Showtime.new(empty_seats: 37, price_cents: 300, sku: "12345D", start_hour: DateTime.new(2019,12,06,16,00,00), end_hour: DateTime.new(2019,12,06,17,47,00))
 s4.movie = m2
-s4.theater = t1
+s4.theater = t2
 s4.save
 
 

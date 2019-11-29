@@ -1,9 +1,9 @@
 <%= link_to movie_path(movie) do %>
   <div class="card-trip">
     <% if movie.photos.attached? %>
-      <div class="banner-index" style="background-image: url(<%= cl_image_path movie.photos.first.key %>);">
+      <div class="card-photo-area">
         <%= cl_image_tag movie.photos.first.key, width: 304, height: 304 %>
-        <i class="far fa-heart transition" id="add-favorite"></i>
+          <i class="far fa-heart index-heart transition" id="add-favorite"></i>
       </div>
     <% else %>
       <%= cl_image_tag("unknown_mn7pzj.png", :width=>304, :crop=>"scale") %>

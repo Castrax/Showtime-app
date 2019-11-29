@@ -38,10 +38,18 @@
   color: orange;
 }
 
-#add-favorite {
+
+.card-photo-area {
   position: relative;
-  bottom: 268px;
-  right: 22px;
+}
+
+.index-heart {
+  position: absolute;
+  bottom: 264px;
+  right: 7px;
+
+}
+#add-favorite {
   font-size: x-large;
   color: $st-desire;
   font-size: 2rem;

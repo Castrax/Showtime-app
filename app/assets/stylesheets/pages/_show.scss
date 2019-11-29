@@ -40,6 +40,7 @@
   align-items: end;
   margin-top: 7px;
   height: 25vh;
+  position: relative;
 
   h1 {
     margin: 0;
@@ -53,4 +54,10 @@
 .card-header {
   text-align: center;
   background-color: $st-babypowder;
+}
+
+.show-heart {
+  position: absolute;
+  bottom: 164px;
+  right: 17px;
 }

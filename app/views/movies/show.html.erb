@@ -2,6 +2,7 @@
   <% if @movie.photos.attached? %>
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @movie.photos.first.key %>);">
       <div>
+        <i class="far fa-heart show-heart transition" id="add-favorite"></i>
         <h1><%= @movie.title %></h1>
       </div>
     </div>
@@ -39,3 +40,5 @@
   </div> <!-- container -->
   <div><%= render 'shared/showtimes_cards' %></div>
 </div> <!-- header-poster -->
+
+<% console %>
