@@ -27,7 +27,7 @@ t2 = Theater.create(name: "Majestic Bastille", address: "4 Boulevard Richard Len
 
 puts "Creating m1..."
 
-m1 = Movie.create(title: "Hors Normes", director: "Toledano", description: "The story of two men, educators of children and adolescents with autism.", category: "Drama", duration: "1h47", rating: 4.5, almost_finished?: true)
+m1 = Movie.create(title: "Hors Normes", director: "Toledano", cast: "Vincent Cassel, Reda Kateb, Hélène Vincent", description: "The story of two men, educators of children and adolescents with autism.", category: "Drama", duration: "1h47", rating: 4.5, almost_finished?: true)
 
 puts "Creating hors normes photos..."
 
@@ -37,7 +37,7 @@ hn2 = URI.open("https://m.media-amazon.com/images/M/MV5BMTkwOGM3YjAtYWUxYS00ZmJj
 m1.photos.attach(io: hn2, filename: 'hn2.jpg', content_type: 'image/jpg')
 m1.save
 
-m2 = Movie.create(title: "Les Misérables", director: "Ly", description: "Stéphane joined the Anti-Crime Brigade of Montfermeil, in the 93. He meets his new teammates, Chris and Gwada, and discovers the tensions between the different groups of the district.", category: "Detective", duration: "1h47", rating: 4.3, almost_finished?: true)
+m2 = Movie.create(title: "Les Misérables", director: "Ly", cast: "Damien Bonnard, Alexis Manenti, Djibril Zonga, Issa Perica", description: "Stéphane joined the Anti-Crime Brigade of Montfermeil, in the 93. He meets his new teammates, Chris and Gwada, and discovers the tensions between the different groups of the district.", category: "Detective", duration: "1h47", rating: 4.3, almost_finished?: true)
 
 miserables_1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTZkYTBkY2MtMzRmNS00NjM3LWFiMzItZmJjNzNhMjgyYzczXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SY1000_CR0,0,677,1000_AL_.jpg")
 m2.photos.attach(io: miserables_1, filename: 'les_miserables-1.jpg', content_type: 'image/jpg')
@@ -45,7 +45,7 @@ miserables_2 = URI.open("https://m.media-amazon.com/images/M/MV5BMDY0MGE5MzUtNDl
 m2.photos.attach(io: miserables_2, filename: 'miserables-2.jpg', content_type: 'image/jpg')
 m2.save
 
-m3 = Movie.create(title: "Fronzen 2", director: "Chris Buck", description: "Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa's powers in order to save their kingdom.", category: "Animation", duration: "1h47", rating: 4.9)
+m3 = Movie.create(title: "Frozen 2", director: "Chris Buck", cast: "Kristen Bell, Idina Menzel, Josh Gad", description: "Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa's powers in order to save their kingdom.", category: "Animation", duration: "1h47", rating: 4.9)
 frozen1 = URI.open("https://m.media-amazon.com/images/M/MV5BMjA0YjYyZGMtN2U0Ni00YmY4LWJkZTItYTMyMjY3NGYyMTJkXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_SY1000_SX675_AL_.jpg")
 m3.photos.attach(io: frozen1, filename: 'frozen1.jpg', content_type: 'image/jpg')
 
@@ -55,7 +55,7 @@ m4 = Movie.create(title: "The Lion King", director: "Chris Buck", description: "
 rl1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTQ4ZDhmOTMtN2EzZi00ZjhjLTkxMmMtYTFiODNiYzEwZTc3XkEyXkFqcGdeQXVyODUzMjQxMTA@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
 m4.photos.attach(io: rl1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
 
-m5 = Movie.create(title: "Knives out", director: "Rian Johnson", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", category: "Drama", duration: "1h47", rating: 5)
+m5 = Movie.create(title: "Knives out", director: "Rian Johnson", cast: "Daniel Craig, Chris Evans, Ana de Armas, Jamie Lee Curtis", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", category: "Drama", duration: "1h47", rating: 5)
 ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SY1000_SX675_AL_.jpg")
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
 
