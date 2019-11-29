@@ -24,7 +24,7 @@
         </div>
         <div class="number-seats">
         </div>
-        <p> <strong>TOTAL PRICE: <span class="total-price"><%= (showtime.price * 100).to_i %></span> €</strong></p>
+        <p> <strong>TOTAL PRICE: <span class="total-price"><%= (showtime.price).to_i %></span> €</strong></p>
       </div>
       <div class="modal-footer footer-center">
         <%= form_tag orders_path do %>
