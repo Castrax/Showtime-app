@@ -9,11 +9,13 @@ const calculatePrice = () => {
 
 
   plus.addEventListener("click", (event) => {
+    console.log(event);
     counter += 1;
     number_of_seats_string.value = counter;
     total_price.innerText = parseInt(price_per_seat_string.innerText) * parseInt(number_of_seats_string.value);
   });
   minus.addEventListener("click", (event) => {
+    console.log(event);
     counter -= 1;
     number_of_seats_string.value = counter;
     total_price.innerText = parseInt(price_per_seat_string.innerText) * parseInt(number_of_seats_string.value);
