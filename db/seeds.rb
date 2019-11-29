@@ -59,10 +59,6 @@ m5 = Movie.create(title: "Knives out", director: "Rian Johnson", description: "A
 ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SY1000_SX675_AL_.jpg")
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
 
-m6 = Movie.create(title: "The Lion King", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h47", rating: 5)
-rl1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTQ4ZDhmOTMtN2EzZi00ZjhjLTkxMmMtYTFiODNiYzEwZTc3XkEyXkFqcGdeQXVyODUzMjQxMTA@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
-m4.photos.attach(io: rl1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
-
 
 s1 = Showtime.new(empty_seats: 15, price_cents: 400, sku: "12345A", start_hour: DateTime.new(2019,12,06,12,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
 s1.movie = m1
