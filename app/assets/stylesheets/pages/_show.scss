@@ -61,3 +61,49 @@
   bottom: 164px;
   right: 17px;
 }
+
+.modal-dialog-bottom {
+  position:fixed;
+  top:auto;
+  right:auto;
+  left:auto;
+  bottom:0;
+  width: 96vw;
+}
+
+.modal-border-height {
+  border-radius: 1rem;
+  height: 60vh;
+  text-align: center;
+}
+
+.modal-body-spacing{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.choose-seats {
+  width: auto;
+  align-self: center;
+}
+
+#number-of-seats {
+  width: 11%;
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  border: none;
+  text-align: center;
+  background-color: $st-yellow;
+  opacity: 0.9;
+}
+
+.footer-center {
+  justify-content: center;
+}
+
+.book-button {
+  width: 129px;
+  border-radius: 4px;
+}
