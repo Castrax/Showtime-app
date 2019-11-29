@@ -2,7 +2,7 @@
   <div class="card-trip">
     <% if movie.photos.attached? %>
       <div class="card-photo-area">
-        <%= cl_image_tag movie.photos.first.key, width: 304, height: 304 %>
+        <%= cl_image_tag movie.photos.first.key, width: 304, height: 330, crop: "fill" %>
           <i class="far fa-heart index-heart transition" id="add-favorite"></i>
       </div>
     <% else %>
