@@ -15,9 +15,7 @@ class MoviesController < ApplicationController
 
   def show
     @movie = Movie.find(params[:id])
-    idstheaters = @movie.showtimes.distinct.pluck(:theater_id)
-    @theaters = Theater.where(id: idstheaters).geocoded.near([session[:latitude].to_f, session[:longitude].to_f], 20) #à modifier quand on aura la géoloc : chercher les cinémas dont la distance avec le current_user est < à 5km + afficher les cinémas par ordre croissant de distance dans la show).
-    # @showtimes = Showtime.where(movie_id: @movie, theater_id: @theater)
+    @theaters = @movie.theaters.geocoded.near([session[:latitude].to_f, session[:longitude].to_f], 20)
     @icon = Octicons::Octicon.new("dash")
   end
 
