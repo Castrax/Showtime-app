@@ -1,13 +1,13 @@
 <div class="header-poster">
   <% if @movie.photos.attached? %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path @movie.photos.first.key %>);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
         <div class="show-title">
           <i class="far fa-heart show-heart transition" id="add-favorite"></i>
           <h1><%= @movie.title %></h1>
         </div>
     </div>
   <% else %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(<%= cl_image_path("unknown_mn7pzj.png") %>);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
       <div class="show-title">
         <h1><%= @movie.title %></h1>
       </div>
@@ -40,5 +40,3 @@
   </div> <!-- container -->
   <div><%= render 'shared/showtimes_cards' %></div>
 </div> <!-- header-poster -->
-
-<% console %>
