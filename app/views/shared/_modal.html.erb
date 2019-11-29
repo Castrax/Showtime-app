@@ -8,7 +8,7 @@
       <div class="modal-body modal-body-spacing">
         <p><%= showtime.empty_seats %> empty seats</p>
         <p><span class="price-per-seat"><%= showtime.price %></span> € (/seat)</p>
-        <%= showtime.start_hour %>
+        <%= showtime.start_hour.strftime("%Hh%M") %>
         <div class="input-group choose-seats">
           <span class="input-group-btn">
             <button type="button" class="btn btn-default btn-number" id="minus" data-type="minus" data-field="quant[1]">
