@@ -1,17 +1,44 @@
-.navbar {
-  background: #F9FDF8;
+.navbar-light {
+  background: $st-bg-color;
   margin: 0 auto;
   width: 100%;
   padding-left: 0;
+  padding-right: 0;
 }
 
-.navbar p {
+.navbar-light p {
   text-align: center;
-  margin: 0 auto;
+  margin: 0 0;
   width: auto;
-  border: 0.5px solid $st-silver;
-  padding: 1px 4px;
-  border-radius: 4px;
-  background-color: rgba(230, 230, 230, 0.3);
+  padding-top: 1rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
+.navbar-toggler {
+  border: none;
+  color: $st-middle-grey;
+  padding: 0;
+  padding-top: 1rem;
+}
+
+.arrow {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  font-size: 1rem;
+  color: $white;
+}
+
+.container {
+  position: relative;
+}
+
+.navbar-transparent {
+  position: absolute;
+  z-index: 1;
+}
+
+.p-show {
+  color: white;
+  margin-bottom: 0;
+}
