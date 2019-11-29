@@ -32,27 +32,28 @@ m1 = Movie.create(title: "Hors Normes", director: "Toledano", description: "Lore
 puts "Creating hors normes photos..."
 
 hn1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTEwMTlkNjAtZTQxZi00YjIwLTkxNmItYzQ4OWZkMzJkMzliXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_CR0,0,737,1000_AL_.jpg")
-m1.photos.attach(io: hn1, filename: 'hors_normes-1.jpg', content_type: 'image/jpg')
-hors_normes_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574768528/k7e3xntpf3jpkbdr2wev.jpg")
-m1.photos.attach(io: hors_normes_2, filename: 'hors_normes-2.jpg', content_type: 'image/jpg')
-hors_normes_3 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574766649/eiizplijmkcsb2qbixeo.jpg")
-m1.photos.attach(io: hors_normes_3, filename: 'hors_normes-3.jpg', content_type: 'image/jpg')
+m1.photos.attach(io: hn1, filename: 'hn1.jpg', content_type: 'image/jpg')
+hn2 = URI.open("https://m.media-amazon.com/images/M/MV5BMTkwOGM3YjAtYWUxYS00ZmJjLWI1OGQtYmExNTc0ZjhmMmZmXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_SY1000_CR0,0,1500,1000_AL_.jpg")
+m1.photos.attach(io: hn2, filename: 'hn2.jpg', content_type: 'image/jpg')
 m1.save
 
 m2 = Movie.create(title: "Les Misérables", director: "Ly", description: "Stéphane, tout juste arrivé de Cherbourg, intègre la Brigade Anti-Criminalité de Montfermeil, dans le 93. Il va faire la rencontre de ses nouveaux coéquipiers, Chris et Gwada, deux \"Bacqueux\" d’expérience. Il découvre rapidement les tensions entre les différents groupes du quartier.", category: "Policier", duration: "1h42", rating: 4.3, almost_finished?: true)
 
-les_miserables_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574941689/cAo4839y28yiCv9G7NX9ihuz.jpg")
-m2.photos.attach(io: les_miserables_1, filename: 'les_miserables-1.jpg', content_type: 'image/jpg')
-les_miserables_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574935896/xkwDkNYn51GZZmrcfbFPHdve.jpg")
-m2.photos.attach(io: les_miserables_2, filename: 'les_miserables-2.jpg', content_type: 'image/jpg')
+miserables_1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTZkYTBkY2MtMzRmNS00NjM3LWFiMzItZmJjNzNhMjgyYzczXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_SY1000_CR0,0,677,1000_AL_.jpg")
+m2.photos.attach(io: miserables_1, filename: 'les_miserables-1.jpg', content_type: 'image/jpg')
+miserables_2 = URI.open("https://m.media-amazon.com/images/M/MV5BMDY0MGE5MzUtNDllMi00MmUxLWI3MTItNWJiMmQ3MzJjMDcxXkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_.jpg")
+m2.photos.attach(io: miserables_2, filename: 'les_miserables-2.jpg', content_type: 'image/jpg')
 m2.save
 
 m3 = Movie.create(title: "La Reine des neiges 2", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h45", rating: 4.9)
+frozen1 = URI.open("https://m.media-amazon.com/images/M/MV5BMjA0YjYyZGMtN2U0Ni00YmY4LWJkZTItYTMyMjY3NGYyMTJkXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_SY1000_SX675_AL_.jpg")
+m3.photos.attach(io: frozen1, filename: 'frozen1.jpg', content_type: 'image/jpg')
+
 
 
 m4 = Movie.create(title: "Le Roi Lion", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h50", rating: 5)
-roi_lion_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574939527/HK36evkHSb382pVzJ32oJbRv.jpg")
-m4.photos.attach(io: roi_lion_1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
+rl1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTQ4ZDhmOTMtN2EzZi00ZjhjLTkxMmMtYTFiODNiYzEwZTc3XkEyXkFqcGdeQXVyODUzMjQxMTA@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
+m4.photos.attach(io: rl1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
 
 
 s1 = Showtime.new(empty_seats: 15, price_cents: 400, sku: "12345A", start_hour: DateTime.new(2019,12,06,12,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
