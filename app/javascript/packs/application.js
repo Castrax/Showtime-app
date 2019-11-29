@@ -17,7 +17,7 @@ if (document.querySelector('#add-favorite')) {
   heartLike();
 };
 
-if (document.querySelector('.number_of_seats_string')) {
+if (document.querySelector('#number-of-seats')) {
   calculatePrice();
 };
 

@@ -23,11 +23,9 @@
         </div>
         <div class="number-seats">
         </div>
-        <div class="total-price">
-        </div>
       </div>
       <div class="modal-footer">
-        <p> <strong>TOTAL PRICE: <span class="total-price"></span> €</strong></p>
+        <p> <strong>TOTAL PRICE: <span class="total-price"><%= (showtime.price * 100).to_i %></span> €</strong></p>
         <%= form_tag orders_path do %>
           <%= hidden_field_tag 'showtime_id', showtime.id %>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
