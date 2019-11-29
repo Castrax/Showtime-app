@@ -27,7 +27,6 @@
   }
 }
 
-
 .card {
   margin: 1rem;
 }
@@ -39,27 +38,30 @@
   justify-content: center;
   align-items: end;
   margin-top: 7px;
-  height: 25vh;
+  height: 60vh;
   position: relative;
 
   h1 {
     margin: 0;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 2em;
     font-weight: inherit;
-    color: $st-babypowder;
+    color: $white;
     }
 }
 
 .card-header {
   text-align: center;
-  background-color: $st-babypowder;
+  background-color: $light-grey;
 }
 
 .show-heart {
   position: absolute;
-  bottom: 164px;
-  right: 17px;
+  top: 15px;
+  right: 15px;
+}
+
+.show-title {
+  padding-top: 10rem;
 }
 
 .modal-dialog-bottom {

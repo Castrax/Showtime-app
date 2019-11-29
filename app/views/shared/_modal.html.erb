@@ -6,8 +6,8 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div> <!-- modal-header -->
       <div class="modal-body modal-body-spacing">
-        <p><em>Only <%= showtime.empty_seats %> empty seats left!</em></p>
-        <p><span class="price-per-seat"><%= showtime.price * 100 %></span> € (/seat)</p>
+        <p><%= showtime.empty_seats %> empty seats</p>
+        <p><span class="price-per-seat"><%= showtime.price %></span> € (/seat)</p>
         <%= showtime.start_hour %>
         <div class="input-group choose-seats">
           <span class="input-group-btn">
