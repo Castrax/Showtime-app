@@ -29,8 +29,8 @@ m1 = Movie.create(title: "Hors Normes", director: "Toledano", description: "Lore
 
 puts "Creating hors normes photos..."
 
-hors_normes_1 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574768528/k7e3xntpf3jpkbdr2wev.jpg")
-m1.photos.attach(io: hors_normes_1, filename: 'hors_normes-1.jpg', content_type: 'image/jpg')
+hn1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTEwMTlkNjAtZTQxZi00YjIwLTkxNmItYzQ4OWZkMzJkMzliXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SY1000_CR0,0,737,1000_AL_.jpg")
+m1.photos.attach(io: hn1, filename: 'hors_normes-1.jpg', content_type: 'image/jpg')
 hors_normes_2 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574768528/k7e3xntpf3jpkbdr2wev.jpg")
 m1.photos.attach(io: hors_normes_2, filename: 'hors_normes-2.jpg', content_type: 'image/jpg')
 hors_normes_3 = URI.open("https://res.cloudinary.com/ddlesqeup/image/upload/v1574766649/eiizplijmkcsb2qbixeo.jpg")
