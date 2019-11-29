@@ -1,12 +1,12 @@
 <div class="header-poster">
   <% if @movie.photos.attached? %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
         <div class="show-title">
           <i class="far fa-heart show-heart transition" id="add-favorite"></i>
         </div>
     </div>
   <% else %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
       <div class="show-title">
         <h1><%= @movie.title %></h1>
       </div>
