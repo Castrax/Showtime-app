@@ -6,7 +6,10 @@
       <% end %>
     <% end %>
     <% unless session[:latitude].nil? %>
-      <p><%= Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first.suburb %> - <%= Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first.city %></p>
+      <% search = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first %>
+      <% unless search.nil? %>
+        <p><%= search.suburb %> - <%= search.city %></p>
+      <% end %>
     <% end %>
     <% if action_name == "show" %>
     <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/castrax" />
