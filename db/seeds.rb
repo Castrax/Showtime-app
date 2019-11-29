@@ -22,7 +22,7 @@ u1 = User.create(email: "coco@coco.com", password: "testtest")
 puts "Creating t1..."
 
 t1 = Theater.create(name: "Louxor", address: "Bd de Magenta")
-t2 = Theater.create(name: "Majestic Bastille", address: "4 bd de Richard Lenoir")
+t2 = Theater.create(name: "Majestic Bastille", address: "4 Boulevard Richard Lenoir, 75011 Paris")
 
 
 puts "Creating m1..."
