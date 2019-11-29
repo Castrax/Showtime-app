@@ -3,8 +3,8 @@ import "bootstrap";
 import { initAutocomplete } from "../plugins/init_autocomplete";
 import { initSiema } from "../plugins/init_carrousel";
 import { geoloc } from "../plugins/geoloc";
-import { counterField } from "../plugins/counter_field";
 import { calculatePrice } from "../plugins/calculate_price";
+import { heartLike } from "../plugins/heart_like";
 
 initAutocomplete();
 initSiema();
@@ -13,13 +13,11 @@ if (document.querySelector('.geoloc')) {
   geoloc();
 };
 
-// calculatePrice();
+if (document.querySelector('#add-favorite')) {
+  heartLike();
+};
 
-const like = document.getElementById("add-favorite")
+if (document.querySelector('.number_of_seats_string')) {
+  calculatePrice();
+};
 
-like.addEventListener("click", (event) => {
-  console.log(event);
-  event.preventDefault();
-  event.target.classList.toggle("far");
-  event.target.classList.toggle("fas");
-});
