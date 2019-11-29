@@ -1,13 +1,19 @@
 <div class="movie-showtimes">
   <div class="card">
     <% @movie.theaters.each do |theater| %>
-      <h5 class="card-header"><%= theater.name %></h5>
+      <h5 class="card-header"><%= theater.name %> <img src="https://www.cinemaspathegaumont.com/media/gpxp/4DX/details/logo_url/1883008.png" class= "imax" alt=""> <img src="https://www.cinemaspathegaumont.com/media/gpxp/IMAX/details/logo_url/1872597.png" alt="" class="imax"></h5>
       <% theater.showtimes.where(movie_id: @movie.id).each do |showtime| %>
         <div class="card-body" data-toggle="modal" data-target="#showtimesModal-<%=showtime.empty_seats %>">
           <h5 class="card-title"><%= showtime.start_hour.strftime("%Hh%M") %> - <%= showtime.end_hour.strftime("%Hh%M") %></h5>
-          <p class="card-text"><%= showtime.empty_seats %> empty seats</p>
-          <p class="card-text"><%= showtime.price %> € (/seat)</p>
-          <p class="card-text"><%= theater.distance_to([session[:latitude], session[:longitude]])%>km</p>
+          <div class="card-disposition">
+            <div class="card-left">
+              <p class="card-text"><img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575037604/chair_cyvgya.svg" width="30px" alt="">  <strong><span class="seats"><%= showtime.empty_seats %></span></strong> empty seats</p>
+              <p class="card-text-price"><i class="fas fa-euro-sign"></i><%= showtime.price %> €</p>
+            </div>
+            <div class="card-right">
+              <p class="card-text-distance"><i class="fas fa-street-view"></i><%= (theater.distance_to([session[:latitude], session[:longitude]])).round(2)%>km</p>
+            </div>
+          </div>
         </div>
         <div><%= render partial: 'shared/modal', locals: { showtime: showtime } %></div>
       <% end %>
