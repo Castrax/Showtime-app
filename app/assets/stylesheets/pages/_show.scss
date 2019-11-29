@@ -63,3 +63,39 @@
 .show-title {
   padding-top: 10rem;
 }
+
+.imax {
+  width: 70px;
+  padding-left: 0.5rem;
+}
+
+.card-title, .card-text {
+  text-align: center;
+}
+
+.card-text .price {
+  font-size: 1.5rem;
+}
+
+.card-body {
+  border-bottom: 1px solid grey;
+}
+
+.card-disposition {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-text-distance, .card-text-price {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.fa-street-view, .fa-euro-sign {
+  padding-right: 0.5rem;
+}
+
+.seats {
+  font-size: 1.5rem;
+}
