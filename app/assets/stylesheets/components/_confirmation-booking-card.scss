@@ -42,7 +42,7 @@
   display: block;
   width: 30px;
   height: 30px;
-  background-color: #F9F9F9;
+  background-color: $st-yellow;
   position: absolute;
   top: 83px ;
   right: -15px;
@@ -172,5 +172,5 @@
 }
 
 .conf-bg {
-  background-color: #F9F9F9;
+  background-color: $st-yellow;
 }
