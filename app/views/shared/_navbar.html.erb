@@ -13,7 +13,7 @@
       <% search = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first %>
       <% unless search.nil? %>
         <% if action_name == "show" %>
-          <p class="p-show"><%= search.suburb %> - <%= search.city %></p>
+          <p></p>
         <% else %>
           <p><%= search.suburb %> - <%= search.city %></p>
         <% end %>
