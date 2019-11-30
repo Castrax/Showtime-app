@@ -8,7 +8,7 @@
 .movie-infos {
   flex-direction: column;
   text-align: center;
-  padding: 1rem 0;
+  padding-top: 1rem;
   display: flex;
   color: $st-body-color;
 
@@ -51,7 +51,20 @@
 
 .card-header {
   text-align: center;
-  background-color: $light-grey;
+  background-color: white;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.card-header-infos {
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 1rem;
+}
+
+.distance {
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .show-heart {
@@ -144,4 +157,8 @@
 .book-button {
   width: 129px;
   border-radius: 4px;
+}
+
+.key-elements > p {
+  margin: 0;
 }
