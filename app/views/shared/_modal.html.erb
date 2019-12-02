@@ -29,6 +29,7 @@
       <div class="modal-footer footer-center">
         <%= form_tag orders_path, remote: true do %>
           <%= hidden_field_tag 'showtime_id', showtime.id %>
+          <%= hidden_field_tag 'number_of_seats', "" %>
 <!--           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
           <%= submit_tag 'Book', class: 'btn btn-primary book-button', id:"pay" %>
         <% end %>
