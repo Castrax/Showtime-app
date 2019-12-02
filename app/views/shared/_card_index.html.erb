@@ -2,11 +2,11 @@
   <div class="card-trip">
     <% if movie.photos.attached? %>
       <div class="card-photo-area">
-        <%= cl_image_tag movie.photos.first.key, width: 150, height: 225, crop: "fill" %>
+        <%= cl_image_tag movie.photos.first.key, width: 220, height: 330, crop: "fill" %>
           <i class="far fa-heart index-heart transition" id="add-favorite"></i>
       </div>
     <% else %>
-      <%= cl_image_tag("unknown_mn7pzj.png", :width=>150, :crop=>"scale") %>
+      <%= cl_image_tag("unknown_mn7pzj.png", :width=>220, :crop=>"scale") %>
     <% end %>
     <div class="card-trip-infos">
       <div>
