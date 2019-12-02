@@ -1,12 +1,15 @@
 const heartLike = () => {
 
-  const like = document.getElementById("add-favorite");
+  const like = document.querySelectorAll("#add-favorite");
 
-  like.addEventListener("click", (event) => {
-    console.log(event);
-    event.preventDefault();
-    event.target.classList.toggle("far");
-    event.target.classList.toggle("fas");
+
+  like.forEach(function(element) {
+    element.addEventListener("click", (event) => {
+      console.log(event);
+      event.preventDefault();
+      event.target.classList.toggle("far");
+      event.target.classList.toggle("fas");
+    });
   });
 };
 

@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   def create
     showtime = Showtime.find(params[:showtime_id])
     @order = Order.create!(showtime: showtime, showtime_sku: showtime.sku, amount: showtime.price_cents * params[:number_of_seats].to_i, state: 'pending', user: current_user)
-
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       line_items: [{
