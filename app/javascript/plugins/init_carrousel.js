@@ -5,7 +5,7 @@ const initSiema = () => {
     siemas.forEach(siema => {
     new Siema({
       selector: siema,
-      perPage: 1.1,
+      perPage: 2,
       });
   });
 };

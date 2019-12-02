@@ -55,7 +55,7 @@ m4 = Movie.create(title: "The Lion King", director: "Chris Buck", description: "
 rl1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTQ4ZDhmOTMtN2EzZi00ZjhjLTkxMmMtYTFiODNiYzEwZTc3XkEyXkFqcGdeQXVyODUzMjQxMTA@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
 m4.photos.attach(io: rl1, filename: 'images_pe8e7l.jpg', content_type: 'image/jpg')
 
-m5 = Movie.create(title: "Knives out", director: "Rian Johnson", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", category: "Drama", duration: "1h47", rating: 5)
+m5 = Movie.create(title: "Knives out", director: "Rian Johnson", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", category: "Drama", duration: "1h47", rating: 5, almost_finished?: true)
 ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SY1000_SX675_AL_.jpg")
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
 
