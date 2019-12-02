@@ -9,10 +9,10 @@
           <div class="card-disposition">
             <div class="card-left">
               <p class="card-text"><img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575037604/chair_cyvgya.svg" width="30px" alt="">  <strong><span class="seats"><%= showtime.empty_seats %></span></strong> fauteuils libres</p>
-              <p class="card-text-price"><i class="fas fa-euro-sign"></i><%= showtime.price %> €</p>
+              <p class="card-text-price"><i class="fas fa-euro-sign"></i><span class="initial-price"><del><%= showtime.initial_price %>€</del></span><span class='final-price'><%= showtime.price %> €</span></p>
             </div>
             <div class="card-right">
-              <p class="card-text-distance"><i class="fas fa-street-view"></i><%= (theater.distance_to([session[:latitude], session[:longitude]])).round(2)%>km</p>
+              <p class="card-text-distance"><i class="fas fa-street-view"></i><%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
             </div>
           </div>
         </div>
