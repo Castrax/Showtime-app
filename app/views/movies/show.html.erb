@@ -1,12 +1,12 @@
 <div class="header-poster">
   <% if @movie.photos.attached? %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
         <div class="show-title">
           <i class="far fa-heart show-heart transition" id="add-favorite"></i>
         </div>
     </div>
   <% else %>
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
+    <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0)), url(<%= cl_image_path (@movie.photos.first.key), gravity: "north" %>);">
       <div class="show-title">
         <h1><%= @movie.title %></h1>
       </div>
@@ -29,8 +29,8 @@
       </div>
       <div class="key-elements">
         <p><%= @movie.category %> (<%= @movie.duration %>)</p>
-        <p>Director: <span><%= @movie.director %></span> </p>
-        <p>Cast:<span><%= @movie.cast %></span></p>
+        <p>Réalisateur : <span><%= @movie.director %></span> </p>
+        <p>Casting : <span><%= @movie.cast %></span></p>
       </div> <!-- key-elements -->
       <div class="movie-description">
         <p><%= @movie.description %></p>
@@ -39,3 +39,4 @@
   </div> <!-- container -->
   <div><%= render 'shared/showtimes_cards' %></div>
 </div> <!-- header-poster -->
+<script src="https://js.stripe.com/v3/"></script>

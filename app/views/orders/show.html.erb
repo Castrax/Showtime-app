@@ -16,17 +16,17 @@
           <div class="even-date">
            <i class="fa fa-calendar"></i>
            <time>
-             <span>from <%= @order.showtime.start_hour %> to <%= @order.showtime.end_hour %></span>
+             <span class="hours">from <%= @order.showtime.start_hour.hour %>h to <%= @order.showtime.end_hour.hour %>h</span>
            </time>
           </div>
           <div class="even-info">
             <i class="fa fa-map-marker"></i>
             <p>
-              <%= @order.showtime.theater.name %>, <%= @order.showtime.theater.address %>
+              <span class="theater-name"><%= @order.showtime.theater.name %></span>, <%= Geocoder.search([@order.showtime.theater.latitude, @order.showtime.theater.longitude]).first.suburb %>
             </p>
           </div>
-          <div class="status">
-            <%= @order.state %>
+          <div class="qr-code">
+            <img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575130254/frame_y9e6j6.png" width="150px" alt="">
           </div>
           <div class="add-wallet">
             <%= render './shared/add_wallet_badge' %>

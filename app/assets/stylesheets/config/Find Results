@@ -1,0 +1,17 @@
+Searching 177 files for "conf-bg"
+
+/Users/mathilderobert/code/Castrax/Showtime-app/app/assets/stylesheets/components/_confirmation-booking-card.scss:
+  172  }
+  173
+  174: .conf-bg {
+  175    background-color: $st-yellow;
+  176  }
+
+/Users/mathilderobert/code/Castrax/Showtime-app/app/helpers/application_helper.rb:
+    2    def body_class_names
+    3      return "body-bg" if action_name == "home"
+    4:     return "conf-bg" if controller_name == "orders" && action_name == "show"
+    5    end
+    6
+
+2 matches across 2 files

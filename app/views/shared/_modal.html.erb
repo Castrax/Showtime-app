@@ -6,9 +6,9 @@
         <button type="button" class="close" data-dismiss="modal">&times;</button>
       </div> <!-- modal-header -->
       <div class="modal-body modal-body-spacing">
-        <p><%= showtime.empty_seats %> empty seats</p>
-        <p><span class="price-per-seat"><%= showtime.price %></span> € (/seat)</p>
-        <%= showtime.start_hour %>
+        <p><%= showtime.empty_seats %> fauteuils libres.</p>
+        <p><span class="price-per-seat"><%= showtime.price %></span> € / fauteuil</p>
+        <p class="hour"><%= showtime.start_hour.strftime("%Hh%M") %></p>
         <div class="input-group choose-seats">
           <span class="input-group-btn">
             <button type="button" class="btn btn-default btn-number" id="minus" data-type="minus" data-field="quant[1]">
@@ -24,17 +24,15 @@
         </div>
         <div class="number-seats">
         </div>
-        <p> <strong>TOTAL PRICE: <span class="total-price"><%= (showtime.price).to_i %></span> €</strong></p>
+        <p> <strong>Prix total : <span class="total-price"><%= (showtime.price).to_i %></span> €</strong></p>
       </div>
       <div class="modal-footer footer-center">
-        <%= form_tag orders_path do %>
+        <%= form_tag orders_path, remote: true do %>
           <%= hidden_field_tag 'showtime_id', showtime.id %>
 <!--           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
-          <%= submit_tag 'Book', class: 'btn btn-primary book-button' %>
+          <%= submit_tag 'Book', class: 'btn btn-primary book-button', id:"pay" %>
         <% end %>
       </div>
     </div> <!-- modal-content -->
   </div> <!-- modal-dialog -->
 </div> <!-- modal -->
-
-

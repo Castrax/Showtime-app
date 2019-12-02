@@ -4,18 +4,50 @@
   background-position: 0% 0%;
 }
 
-#logo {
-  text-align: center;
+#logo, .img-logo {
+  text-align: left;
   margin-top: 3rem;
+  margin-bottom: 0;
+}
+
+.img-logo {
+  margin-right: 1rem;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-showtime > p {
+  margin-bottom: 0;
+  color: $st-middle-grey;
 }
 
 .tagline {
   text-align: center;
-  padding-top: 2rem;
+  padding: 2.6rem;
+  padding-bottom: 0;
   font-weight: 300;
+  font-size: 1.2rem;
+  color: $st-dark-grey;
+  letter-spacing: 2px;
 }
 
 .current-location {
   display: flex;
   justify-content: flex-start;
+}
+
+.location-text, #autocomplete_address {
+  font-size: 1.25rem;
+}
+
+.fa-location-arrow {
+  font-size: 1.2rem;
+}
+
+.delimiter {
+  display:flex;
 }

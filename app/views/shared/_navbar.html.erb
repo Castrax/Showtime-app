@@ -13,27 +13,20 @@
       <% search = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first %>
       <% unless search.nil? %>
         <% if action_name == "show" %>
-          <p class="p-show"><%= search.suburb %> - <%= search.city %></p>
+          <p></p>
         <% else %>
           <p><%= search.suburb %> - <%= search.city %></p>
         <% end %>
       <% end %>
     <% end %>
     <% if action_name == 'show' %>
-      <button class="navbar-toggler-show" id='navbarDropdown' type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
-          <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/movies">Home</a>
-        <a class="dropdown-item" href="/favorite">Favorite movies</a>
-      </div>
     <% else %>
       <button class="navbar-toggler" id='navbarDropdown' type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
           <span class="navbar-toggler-icon"></span>
       </button>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="/movies">Home</a>
-        <a class="dropdown-item" href="/favorite">Favorite movies</a>
+        <a class="dropdown-item" href="/movies">Accueil</a>
+        <a class="dropdown-item" href="/favorite">Films favoris</a>
       </div>
     <% end %>
   </div>
