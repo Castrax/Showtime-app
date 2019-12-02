@@ -60,38 +60,38 @@ ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNi
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
 
 
-s1 = Showtime.new(empty_seats: 15, price_cents: 400, sku: "12345A", start_hour: DateTime.new(2019,12,06,18,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
+s1 = Showtime.new(empty_seats: 15, price_cents: 400, initial_price: 15, sku: "12345A", start_hour: DateTime.new(2019,12,06,18,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
 s1.movie = m1
 s1.theater = t1
 s1.save
 
-s2 = Showtime.new(empty_seats: 25, price_cents: 300, sku: "12345B", start_hour: DateTime.new(2019,12,06,18,45,00), end_hour: DateTime.new(2019,12,06,15,47,00))
+s2 = Showtime.new(empty_seats: 25, price_cents: 300, initial_price: 11, sku: "12345B", start_hour: DateTime.new(2019,12,06,18,45,00), end_hour: DateTime.new(2019,12,06,15,47,00))
 s2.movie = m1
 s2.theater = t2
 s2.save
 
-s3 = Showtime.new(empty_seats: 17, price_cents: 400, sku: "12345C", start_hour: DateTime.new(2019,12,06,19,00,00), end_hour: DateTime.new(2019,12,06,16,47,00))
+s3 = Showtime.new(empty_seats: 17, price_cents: 400, initial_price: 10, sku: "12345C", start_hour: DateTime.new(2019,12,06,19,00,00), end_hour: DateTime.new(2019,12,06,16,47,00))
 s3.movie = m2
 s3.theater = t1
 s3.save
 
-s4 = Showtime.new(empty_seats: 37, price_cents: 300, sku: "12345D", start_hour: DateTime.new(2019,12,06,19,45,00), end_hour: DateTime.new(2019,12,06,17,47,00))
+s4 = Showtime.new(empty_seats: 37, price_cents: 300, initial_price: 12, sku: "12345D", start_hour: DateTime.new(2019,12,06,19,45,00), end_hour: DateTime.new(2019,12,06,17,47,00))
 s4.movie = m2
 s4.theater = t2
 s4.save
 
 
-s5 = Showtime.new(empty_seats: 25, price_cents: 300, sku: "12345E", start_hour: DateTime.new(2019,12,06,20,10,00), end_hour: DateTime.new(2019,12,06,18,47,00))
+s5 = Showtime.new(empty_seats: 25, price_cents: 300, initial_price: 13, sku: "12345E", start_hour: DateTime.new(2019,12,06,20,10,00), end_hour: DateTime.new(2019,12,06,18,47,00))
 s5.movie = m4
 s5.theater = t1
 s5.save
 
-s6 = Showtime.new(empty_seats: 25, price_cents: 300, sku: "12345F", start_hour: DateTime.new(2019,12,06,21,00,00), end_hour: DateTime.new(2019,12,06,19,47,00))
+s6 = Showtime.new(empty_seats: 25, price_cents: 300, initial_price: 11, sku: "12345F", start_hour: DateTime.new(2019,12,06,21,00,00), end_hour: DateTime.new(2019,12,06,19,47,00))
 s6.movie = m3
 s6.theater = t1
 s6.save
 
-s7 = Showtime.new(empty_seats: 25, price_cents: 300, sku: "12345F", start_hour: DateTime.new(2019,12,06,21,10,00), end_hour: DateTime.new(2019,12,06,19,47,00))
+s7 = Showtime.new(empty_seats: 25, price_cents: 300, initial_price: 11, sku: "12345F", start_hour: DateTime.new(2019,12,06,21,10,00), end_hour: DateTime.new(2019,12,06,19,47,00))
 s7.movie = m5
 s7.theater = t1
 s7.save

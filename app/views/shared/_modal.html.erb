@@ -27,14 +27,12 @@
         <p> <strong>Prix total : <span class="total-price"><%= (showtime.price).to_i %></span> €</strong></p>
       </div>
       <div class="modal-footer footer-center">
-        <%= form_tag orders_path do %>
+        <%= form_tag orders_path, remote: true do %>
           <%= hidden_field_tag 'showtime_id', showtime.id %>
 <!--           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
-          <%= submit_tag 'Book', class: 'btn btn-primary book-button' %>
+          <%= submit_tag 'Book', class: 'btn btn-primary book-button', id:"pay" %>
         <% end %>
       </div>
     </div> <!-- modal-content -->
   </div> <!-- modal-dialog -->
 </div> <!-- modal -->
-
-
