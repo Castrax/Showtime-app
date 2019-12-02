@@ -176,7 +176,6 @@
 
 
 .showtime-card {
-  padding: 20px;
   background-color: white;
   margin: 20px;
   border-color: black;
@@ -188,11 +187,28 @@
 }
 
 .showtime-body {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  text-align: center;
   align-items: center;
-
+  padding: 10px;
 }
 
 .flex-item {
 }
+
+.showtime-title {
+  background-color: grey;
+  color: white;
+  text-transform: uppercase;
+  font-weight: lighter;
+
+  h5 {
+    font-size: 16px;
+    padding: 2px 0px;
+    margin: 0px;
+  }
+}
+
+
