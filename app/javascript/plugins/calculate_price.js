@@ -1,34 +1,37 @@
 const calculatePrice = () => {
 
-  let number_of_seats_string = document.querySelector('#number-of-seats');
-  let counter = 1
-  const plus = document.querySelector('#plus');
-  const minus = document.querySelector('#minus');
-  const price_per_seat_string = document.querySelector(".price-per-seat");
-  const total_price = document.querySelector(".total-price");
-  const stripeSeats = document.querySelector("#number_of_seats");
+  const minus = document.querySelectorAll('.minus');
+  const plus = document.querySelectorAll('.plus');
 
+  minus.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const showtimeId = button.dataset.showtime;
+      const numberOfSeats = document.getElementById(`number-of-seats-${showtimeId}`);
+      numberOfSeats.value = numberOfSeats.value - 1;
+      const totalPrice = document.querySelector(`.total-price-${showtimeId}`);
+      const price = totalPrice.dataset.price;
+      totalPrice.innerText = parseInt(numberOfSeats.value) * parseInt(price);
+      const stripeSeats = document.querySelector(`#number_of_seats_showtime-${showtimeId}`);
+      stripeSeats.value = numberOfSeats.value;
+    })
+  })
 
-  plus.addEventListener("click", (event) => {
-    counter += 1;
-    number_of_seats_string.value = counter;
-    total_price.innerText = parseInt(price_per_seat_string.innerText) * parseInt(number_of_seats_string.value);
-    stripeSeats.value = number_of_seats_string.value;
-  });
-  minus.addEventListener("click", (event) => {
-    counter -= 1;
-    number_of_seats_string.value = counter;
-    total_price.innerText = parseInt(price_per_seat_string.innerText) * parseInt(number_of_seats_string.value);
-    stripeSeats.value = number_of_seats_string.value;
-  });
-  number_of_seats_string.addEventListener('input', (event) => {
-    if(number_of_seats_string.value == ""){
-      total_price.innerText = 0
-    } else {
-      total_price.innerText = parseInt(price_per_seat_string.innerText) * parseInt(number_of_seats_string.value);
-      stripeSeats.value = number_of_seats_string.value;
-    }
-  });
+  plus.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      console.log(event);
+      const showtimeId = button.dataset.showtime;
+      const numberOfSeats = document.getElementById(`number-of-seats-${showtimeId}`);
+      let counter = numberOfSeats.value;
+      numberOfSeats.value = parseInt(numberOfSeats.value) + parseInt("1");
+      const totalPrice = document.querySelector(`.total-price-${showtimeId}`);
+      const price = totalPrice.dataset.price;
+      totalPrice.innerText = parseInt(numberOfSeats.value) * parseInt(price);
+      console.log(`#number_of_seats_showtime-${showtimeId}`)
+      const stripeSeats = document.querySelector(`#number_of_seats_${showtimeId}`);
+      stripeSeats.value = numberOfSeats.value;
+      console.log(stripeSeats.value)
+    })
+  })
 };
 
 export { calculatePrice };
