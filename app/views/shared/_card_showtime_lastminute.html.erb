@@ -13,10 +13,10 @@
     <% else %>
       <%= cl_image_tag("unknown_mn7pzj.png", :width=>220, :crop=>"scale") %>
     <% end %>
-    <div class="card-trip-infos">
+    <div class="showtime-infos">
         <h3><%= showtime.movie.title %></h3>
-        <p class="card-trip-hour">Début : <%= showtime.start_hour.hour %>H</p>
-        <p class="card-trip-pricing"><%= showtime.price_cents / 100 %> €</p>
+        <p class="showtime-hour">Séance à <%= showtime.start_hour.strftime("%Hh%M") %></p>
+        <p class="showtime-pricing"><%= showtime.price_cents / 100 %> €</p>
     </div>
   </div>
 <% end %>
