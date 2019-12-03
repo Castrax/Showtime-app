@@ -9,33 +9,40 @@
       <p><a class="btn btn-flat-showtime-show" href="#">Book now</a></p>
     </div>
   </div>
-  <div class="showtime-movie">
-    <div class="flex">
-      <div class="s-movie-photo">
-        <%= cl_image_tag @showtime.movie.photos.first.key, width: 100, height: 150, crop: "fill" %>
-      </div>
-      <div>
-        <p><%= @showtime.movie.title %></p>
-        <p>Réalisateur : <%= @showtime.movie.director %></p>
-        <p>Casting : <%= @showtime.movie.cast %></p>
-      </div>
-    </div>
-    <p><%= @showtime.movie.rating %></p>
+</div>
+
+<div class="banner-showtime" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @showtime.movie.photos.first.key, height: 350 %>);">
+  <div class="container">
+    <h2><%= @showtime.movie.title %></h2>
+    <p><div class="list-group">
+          <small>
+            <% count = 0 %>
+            <% 5.times do %>
+              <% if @showtime.movie.rating.round > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+              <% count += 1 %>
+            <% end %>
+          </small>
+      </div></p>
+    <p>Réalisateur : <%= @showtime.movie.director %> <br>Casting : <%= @showtime.movie.cast %> </p>
     <p><%= @showtime.movie.description %></p>
   </div>
+</div>
 
   <h2>Autres séances</h2>
 
-  <div class="other-showtimes">
-    <% @theaters.each do |theater| %>
-      <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
-        <%= theater.name %>
-        <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
-          <%= showtime.start_hour.strftime("%Hh%M") %>
-        <% end %>
+<div class="other-showtimes">
+  <% @theaters.each do |theater| %>
+    <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
+      <%= theater.name %>
+      <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
+        <%= showtime.start_hour.strftime("%Hh%M") %>
       <% end %>
     <% end %>
-  </div>
+  <% end %>
 </div>
 
 

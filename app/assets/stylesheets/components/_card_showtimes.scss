@@ -16,7 +16,7 @@
 }
 
 .card-showtime h2 {
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0;
 }
 
@@ -30,4 +30,26 @@
 
 .card-showtime .card-showtime-infos {
   padding: 16px;
+}
+
+.banner-showtime {
+  background-size: cover;
+  background-position: center;
+  padding: 100px 0;
+  margin-top: 3rem;
+}
+
+.banner-showtime h2 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.banner-showtime p {
+  font-size: 1rem;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
