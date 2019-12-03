@@ -1,4 +1,4 @@
-.showtime-infos {
+.showtime-show-infos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
@@ -30,7 +30,7 @@
   margin: 20px;
 }
 
-.showtime-hour {
+.showtime-show-hour {
   font-size: 20px;
   text-align: center;
   padding-bottom: 30px;
