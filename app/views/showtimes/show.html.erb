@@ -39,6 +39,22 @@ Autres séances
     <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
       <%= theater.name %>
       <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
+
+        <div class="flex-item">
+          <span class="seats"><%= showtime.empty_seats %></span> fauteuils
+        </div>
+
+        <div class="flex-item">
+          <h5><%= showtime.start_hour.strftime("%Hh%M") %></h5>
+        </div>
+
+        <div class="flex-item">
+          <p>
+          <span><del><%= showtime.initial_price %>€</del></span></p>
+          <span><%= showtime.price %> €</span>
+          <p></i><%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
+        </div>
+
         <%= showtime.start_hour.strftime("%Hh%M") %>
       <% end %>
     <% end %>
