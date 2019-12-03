@@ -1,4 +1,4 @@
-<div class="banner-showtime" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @showtime.movie.photos.first.key, height: 350 %>);">
+<div class="banner-showtime" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @showtime.movie.photos.second.key, height: 350 %>);">
   <div class="container">
     <h2><%= @showtime.movie.title %></h2>
     <p><div class="list-group">
@@ -23,25 +23,25 @@
   <div class="card-showtime">
     <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
     <div class="card-showtime-infos">
-      <h2><%= @showtime.theater.name %></h2>
-      <p></i><%= @showtime.start_hour.strftime("%Hh%M") %></p>
-      <p><del><%= @showtime.initial_price %>€</del><%= @showtime.price %>€</p>
-      <p>500m</p>
+    <h2><%= @showtime.theater.name %></h2>
+      <div class="card-showtime-description">
+        <p><i class="fas fa-map-marker-alt"></i>500m</p>
+        <p><i class="far fa-clock"></i> <%= @showtime.start_hour.strftime("%Hh%M") %>
+        <h2 class="card-showtime-pricing"><del><%= @showtime.initial_price %>€</del><%= @showtime.price %>€ </h2>
+      </div>
       <p><a class="btn btn-flat-showtime-show" href="#">Book now</a></p>
     </div>
   </div>
-</div>
 
   <h2>Autres séances</h2>
 
-  <div class="container">
     <% @theaters.each do |theater| %>
       <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
         <div class="card-showtime">
           <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
 
           <div class="card-showtime-infos">
-            <%= theater.name %>
+           <h2><%= theater.name %></h2>
             <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
                 <p><span class="seats"><%= showtime.empty_seats %></span> fauteuils</p>
                 <h5><%= showtime.start_hour.strftime("%Hh%M") %></h5>

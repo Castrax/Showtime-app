@@ -2,10 +2,8 @@
   overflow: hidden;
   height: 200px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 10px;
   margin-top: 2rem;
 }
 
@@ -18,10 +16,16 @@
 .card-showtime h2 {
   font-size: 1rem;
   margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.card-showtime-description {
+  margin: 1rem 0;
 }
 
 .card-showtime p {
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
