@@ -1,4 +1,4 @@
-<div class="showtime-infos">
+<div class="showtime-show-infos">
   <div class="theater-photo">
     <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
   </div>
@@ -7,7 +7,7 @@
     <div class="showtime-distance">
       <i class="far fa-compass">500m</i>
     </div>
-    <p class="showtime-hour"><i class="fas fa-film"></i><%= @showtime.start_hour.strftime("%Hh%M") %></p>
+    <p class="showtime-show-hour"><i class="fas fa-film"></i><%= @showtime.start_hour.strftime("%Hh%M") %></p>
     <div class="showtime-price">
       <p><del><%= @showtime.initial_price %>€</del>
       <%= @showtime.price %>€</p>
