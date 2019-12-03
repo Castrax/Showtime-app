@@ -1,6 +1,10 @@
 <div class="showtime-show-infos">
   <div class="theater-photo">
-    <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
+    <% if @showtime.theater.photo.attached? %>
+      <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
+    <% else %>
+      <%= cl_image_tag("unknown_mn7pzj.png", :width=>220, :crop=>"scale") %>
+    <% end %>
   </div>
   <div class="showtime-description">
     <p class="showtime-title"><%= @showtime.theater.name %></p>
