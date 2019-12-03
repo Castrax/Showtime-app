@@ -49,10 +49,6 @@
   font-size: 1.25rem;
 }
 
-.location-text {
-}
-
-
 .fa-location-arrow {
   font-size: 1.2rem;
 }
@@ -71,8 +67,12 @@
   border-radius: 10px;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  opacity: 40%;
+}
+
 .form-control-search:focus {
-  border: 1px solid $orange;
+  border: 1px solid $yellow;
   outline: none !important;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
