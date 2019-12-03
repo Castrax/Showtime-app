@@ -11,8 +11,6 @@ const geoloc = () => {
     const crd = event.coords;
     const lat = crd.latitude;
     const long = crd.longitude;
-    console.log(long);
-    console.log(lat);
     window.location.replace(`/movies?lng=${long}&lat=${lat}`);
   };
 
