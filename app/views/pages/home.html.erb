@@ -1,21 +1,16 @@
 <div class="container">
   <div class="logo">
-    <div class="delimiter">
-      <img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575132216/apple-icon_cr40hi.png" class="img-logo" alt="" width="60">
-      <div class="title-showtime">
-        <h1 id="logo">Showtime</h1>
-        <p>Ne ratez pas l'expérience</p>
-      </div>
-    </div>
+    <img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575367880/logo_hxqlkn.png" class="img-logo">
+    <h1 id="logo">showtime</h1>
   </div>
-      <h2 class="tagline">Sauve les invendus des cinémas autour de toi, et trouve un bon film à petit prix.</strong></h2>
-  <input class="form-control mt-5" id="autocomplete_address" type="text" placeholder="Where are you?">
+      <h2 class="tagline">Achetez des places de cinéma à proximité et <br><strong>à prix réduits.</strong></h2>
   <%= link_to "", class: "geoloc" do %>
-    <div class="current-location mt-2">
-      <i class="fas fa-location-arrow"></i>
+    <div class="current-location mt-5">
+      <i class="fas fa-location-arrow mt-1"></i>
       <p class="location-text mb-0 pl-2">Utiliser ma position actuelle</p>
     </div>
   <% end %>
-  <%= link_to '<button type="button" class="btn geoloc btn-primary mt-5 offset-4">Trouver un film</button>'.html_safe, movies_path %>
+  <input class="form-control-search mt-4" id="autocomplete_address" type="text" placeholder="Où êtes-vous?">
+  <%= link_to '<button type="button" class="btn geoloc mt-3 btn-lg btn-block btn-home">Trouver un film</button>'.html_safe, movies_path %>
 </div>
 

@@ -1,13 +1,15 @@
 // Specific CSS for your home-page
 .body-bg {
-  background-image: url('https://source.unsplash.com/16Tu8S18pu4/375x812');
-  background-position: 0% 0%;
+  background-image: url('https://res.cloudinary.com/ddlesqeup/image/upload/v1575365694/background_qx2qc6.jpg');
+  background-size: cover;
 }
 
 #logo, .img-logo {
   text-align: left;
-  margin-top: 3rem;
   margin-bottom: 0;
+  font-size: 3rem;
+  font-weight: bolder;
+  color: white;
 }
 
 .img-logo {
@@ -16,8 +18,12 @@
 
 .logo {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 5rem;
+  letter-spacing: 3px;
+  font-weight: 900;
 }
 
 .title-showtime > p {
@@ -27,22 +33,25 @@
 
 .tagline {
   text-align: center;
-  padding: 2.6rem;
-  padding-bottom: 0;
-  font-weight: 300;
-  font-size: 1.2rem;
-  color: $st-dark-grey;
+  padding: 2rem 0 0 0;
+  font-size: 1.5rem;
+  color: white;
   letter-spacing: 2px;
 }
 
 .current-location {
   display: flex;
   justify-content: flex-start;
+  color: white;
 }
 
 .location-text, #autocomplete_address {
   font-size: 1.25rem;
 }
+
+.location-text {
+}
+
 
 .fa-location-arrow {
   font-size: 1.2rem;
@@ -50,4 +59,30 @@
 
 .delimiter {
   display:flex;
+}
+
+.ap-input-icon {
+  top: 25px;
+}
+
+.form-control-search {
+  height: 4rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.form-control-search:focus {
+  border: 1px solid $orange;
+  outline: none !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.btn-home {
+  padding: 1rem 2rem 1rem 2rem;
+  border-radius: 10px;
+  background: #FAD87D;
+  color: $st-dark-grey;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
 }
