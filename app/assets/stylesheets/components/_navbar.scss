@@ -1,14 +1,18 @@
 .navbar-light {
-  background: $st-bg-color;
+  background: $st-yellow;
   margin: 0 auto;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  // border-bottom: 1px solid $light-grey;
+  padding-bottom: 1.3rem;
+  font-weight: 600;
+  color: $st-dark-grey;
 }
 
 .navbar-light p {
   text-align: center;
-  margin: 0 0;
+  margin: 0 auto;
   width: auto;
   padding-top: 1rem;
   padding-right: 1rem;
@@ -17,9 +21,10 @@
 
 .navbar-toggler {
   border: none;
-  color: $st-middle-grey;
+  color: $st-dark-grey;
   padding: 0;
   padding-top: 1rem;
+  margin-right: 1rem;
 }
 
 .arrow {
