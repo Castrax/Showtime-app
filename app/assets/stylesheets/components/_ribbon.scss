@@ -7,7 +7,7 @@
   height: 2rem;
   position: absolute;
   top: 0.5rem;
-  left: 0.5rem;
+  left: 0rem;
   z-index: 1;
   border-radius: 5px;
   text-align: center;
@@ -22,11 +22,12 @@
 }
 
 .ribbon-yellow > p {
-  color: white;
+  color: #46494D;
   font-size: 1.25rem;
   opacity: 100%;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin: 0;
+  font-weight: 800;
+  letter-spacing: 1px;
 }
 
 .ribbon-dark > p {
@@ -39,4 +40,5 @@
 
 .dans {
   font-size: 0.75rem;
+  letter-spacing: 0px;
 }
