@@ -1,0 +1,20 @@
+<%= link_to movie_showtime_path(@movies, showtime) do %>
+  <div class="card-trip">
+    <div class="ribbon-wrapper">
+     <div class="ribbon-dark">4€</div>
+    </div>
+    <% if showtime.movie.photos.attached? %>
+      <div class="card-photo-area">
+        <%= cl_image_tag showtime.movie.photos.first.key, width: 220, height: 330, crop: "fill" %>
+          <i class="far fa-heart index-heart transition" id="add-favorite"></i>
+      </div>
+    <% else %>
+      <%= cl_image_tag("unknown_mn7pzj.png", :width=>220, :crop=>"scale") %>
+    <% end %>
+    <div class="card-trip-infos">
+        <h3><%= showtime.movie.title %></h3>
+        <p class="card-trip-hour">Début : <%= showtime.start_hour.hour %>H</p>
+        <p class="card-trip-pricing"><%= showtime.price_per_seat %> €</p>
+    </div>
+  </div>
+<% end %>

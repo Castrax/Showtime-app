@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :movies, only: [:index, :show] do
-    resources :showtimes, only: [:index] do
+    resources :showtimes, only: [:index, :show] do
       resources :theaters, only: [:index]
       end
     end

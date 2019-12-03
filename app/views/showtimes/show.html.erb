@@ -1,0 +1,43 @@
+<div class="header-poster">
+  <% if @showtime.movie.photos.attached? %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0)), url(<%= cl_image_path (@showtime.movie.photos.first.key), gravity: "north" %>);">
+        <div class="show-title">
+          <i class="far fa-heart show-heart transition" id="add-favorite"></i>
+        </div>
+        <div class="infos"></div>
+        <div class="bande-annonce">Voir la bande-annonce</div>
+    </div>
+  <% else %>
+    <div class="banner" style="background-image: linear-gradient(rgba(0, 0, 0, 0.66),rgba(0, 0, 0, 0)), url(<%= cl_image_path (@showtime.movie.photos.first.key), gravity: "north" %>);">
+      <div class="show-title">
+        <h1><%= @showtime.movie.title %></h1>
+      </div>
+    </div>
+  <% end %>
+  <div class="container">
+    <div class="movie-infos">
+      <div class="list-group">
+          <small>
+            <% count = 0 %>
+            <% 5.times do %>
+              <% if @showtime.movie.rating.round > count %>
+                <i class="fas fa-star"></i>
+              <% else %>
+                <i class="far fa-star"></i>
+              <% end %>
+              <% count += 1 %>
+            <% end %>
+          </small>
+      </div>
+      <div class="key-elements">
+        <p><%= @showtime.movie.category %> (<%= @showtime.movie.duration %>)</p>
+        <p>Réalisateur : <span><%= @showtime.movie.director %></span> </p>
+        <p>Casting : <span><%= @showtime.movie.cast %></span></p>
+      </div> <!-- key-elements -->
+      <div class="movie-description">
+        <p><%= @showtime.movie.description %></p>
+      </div>
+    </div> <!-- movie-infos -->
+  </div> <!-- container -->
+</div> <!-- header-poster -->
+<script src="https://js.stripe.com/v3/"></script>

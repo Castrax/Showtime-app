@@ -1,0 +1,24 @@
+.card-trip {
+  position: relative;
+}
+
+.ribbon-yellow {
+  width: 6rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: #FDDC7F;
+  z-index: 1;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.ribbon-yellow > p {
+  color: $st-dark-grey;
+  font-size: 1.5rem;
+}
+
+.dans {
+  font-size: 0.75rem;
+}
