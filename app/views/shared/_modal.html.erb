@@ -7,29 +7,29 @@
       </div> <!-- modal-header -->
       <div class="modal-body modal-body-spacing">
         <p><%= showtime.empty_seats %> fauteuils libres.</p>
-        <p><span class="price-per-seat"><%= showtime.price %></span> € / fauteuil</p>
+        <p><span class="price-per-seat" data-showtime="showtime-<%= showtime.id %>" ><%= showtime.price %></span> € / fauteuil</p>
         <p class="hour"><%= showtime.start_hour.strftime("%Hh%M") %></p>
         <div class="input-group choose-seats">
           <span class="input-group-btn">
-            <button type="button" class="btn btn-default btn-number" id="minus" data-type="minus" data-field="quant[1]">
+            <button type="button" class="btn btn-default btn-number minus" data-showtime="showtime-<%= showtime.id %>" data-type="minus" data-field="quant[1]">
               <svg class="octicon octicon-dash" viewBox="0 0 8 16" version="1.1" width="8" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 7v2h8V7H0z"/></svg>
             </button>
           </span>
-          <input type="text" name="quant[1]" class="input-number" id="number-of-seats" value="1" min="1" max="10">
+          <input type="text" name="quant[1]" class="input-number" id="number-of-seats-showtime-<%= showtime.id %>" value="1" min="1" max="10">
           <span class="input-group-btn">
-            <button type="button" class="btn btn-default btn-number" id="plus" data-type="plus" data-field="quant[1]">
+            <button type="button" class="btn btn-default btn-number plus" data-showtime="showtime-<%= showtime.id %>" data-type="plus" data-field="quant[1]">
               <svg class="octicon octicon-plus" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"/></svg>
             </button>
           </span>
         </div>
         <div class="number-seats">
         </div>
-        <p> <strong>Prix total : <span class="total-price"><%= (showtime.price).to_i %></span> €</strong></p>
+        <p> <strong>Prix total : <span class="total-price-showtime-<%= showtime.id %>" data-price="<%= showtime.price %>"><%= (showtime.price).to_i %></span> €</strong></p>
       </div>
       <div class="modal-footer footer-center">
         <%= form_tag orders_path, remote: true do %>
           <%= hidden_field_tag 'showtime_id', showtime.id %>
-          <%= hidden_field_tag 'number_of_seats', "" %>
+          <%= hidden_field_tag 'number_of_seats', "", id: "number_of_seats_showtime-#{showtime.id}" %>
 <!--           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
           <%= submit_tag 'Book', class: 'btn btn-primary book-button', id:"pay" %>
         <% end %>

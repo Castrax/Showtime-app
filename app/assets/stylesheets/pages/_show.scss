@@ -1,8 +1,9 @@
 .header-poster {
   // background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://source.unsplash.com/jtmwD4i4v1U/375x812');
   background-color: rgba(240,240,240,0.7);
-  height: 100vh;
+  min-height: 100vh;
   background-attachment: fixed;
+  padding-bottom: 20px;
 }
 
 .movie-infos {
@@ -49,18 +50,18 @@
     }
 }
 
-.card-header {
-  text-align: center;
-  background-color: white;
-  font-size: 1.5rem;
-  font-weight: 300;
-}
+// .card-header {
+//   text-align: center;
+//   background-color: white;
+//   font-size: 1.5rem;
+//   font-weight: 300;
+// }
 
-.card-header-infos {
-  text-align: center;
-  font-size: 1rem;
-  padding-top: 1rem;
-}
+// .card-header-infos {
+//   text-align: center;
+//   font-size: 1rem;
+//   padding-top: 1rem;
+// }
 
 .distance {
   font-size: 1.5rem;
@@ -82,9 +83,9 @@
   padding-left: 0.5rem;
 }
 
-.card-title, .card-text {
-  text-align: center;
-}
+// .card-title, .card-text {
+//   text-align: center;
+// }
 
 .card-text .price {
   font-size: 1.5rem;
@@ -139,7 +140,7 @@
   align-self: center;
 }
 
-#number-of-seats {
+.input-number {
   width: 11%;
   width: 40px;
   border-radius: 50%;
@@ -172,3 +173,42 @@
   font-weight: 800;
   margin-left: 0.5rem;
 }
+
+
+.showtime-card {
+  background-color: white;
+  margin: 20px;
+  border-color: black;
+
+}
+
+.showtime-title {
+  text-align: center;
+}
+
+.showtime-body {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.flex-item {
+}
+
+.showtime-title {
+  background-color: grey;
+  color: white;
+  text-transform: uppercase;
+  font-weight: lighter;
+
+  h5 {
+    font-size: 16px;
+    padding: 2px 0px;
+    margin: 0px;
+  }
+}
+
+

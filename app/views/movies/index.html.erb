@@ -1,6 +1,24 @@
 <div class="container-index">
+  <!-- Last minute -->
+  <h2><i class="far fa-clock"></i> Dernière minute</h2>
+  <div class="siema">
+    <% @showtimes.each do |showtime| %>
+      <!-- Carrousel for each last chance showtime -->
+      <%= render './shared/card_showtime_lastminute', showtime: showtime %>
+    <% end %>
+  </div>
+
   <!-- Best Deals -->
-  <h2>Meilleures offres</h2>
+  <h2><i class="fas fa-tags"></i> Meilleures offres</h2>
+  <div class="siema">
+    <% @showtimes.each do |showtime| %>
+      <!-- Carrousel for each last chance showtime -->
+      <%= render './shared/card_showtime_bestdeal', showtime: showtime %>
+    <% end %>
+  </div>
+
+  <!-- Best Deals -->
+  <h2><i class="fas fa-film"></i> Tous les films à l'affiche</h2>
   <div class="siema">
     <% @movies.each do |movie| %>
       <% if movie.almost_finished? %>
@@ -9,14 +27,3 @@
       <% end %>
     <% end %>
   </div>
-
-  <!-- Category list -->
-  <% @categories.each do |category| %>
-    <h2><%= category %></h2>
-      <div class="siema">
-      <% @movies.where(category: category).each do |movie| %>
-          <div><%= render './shared/card_index', movie: movie %></div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
