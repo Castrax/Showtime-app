@@ -3,10 +3,16 @@
     <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
   </div>
   <div class="showtime-description">
-    <p><%= @showtime.theater.name %></p>
-    <p><%= @showtime.start_hour.strftime("%Hh%M") %></p>
-    <p><%= @showtime.price %></p>
-    <a class="btn btn-flat" href="#">Book now</a>
+    <p class="showtime-title"><%= @showtime.theater.name %></p>
+    <div class="showtime-distance">
+      <i class="far fa-compass">500m</i>
+    </div>
+    <p class="showtime-hour"><i class="fas fa-film"></i><%= @showtime.start_hour.strftime("%Hh%M") %></p>
+    <div class="showtime-price">
+      <p><del><%= @showtime.initial_price %>€</del>
+      <%= @showtime.price %>€</p>
+    </div>
+    <a class="btn btn-flat-showtime-show" href="#">Book now</a>
 
   </div>
 </div>

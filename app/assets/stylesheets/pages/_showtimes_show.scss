@@ -1,24 +1,24 @@
 .showtime-infos {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+
   margin: 20px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  // text-align: center;
-  // align-items: center;
-
-
-
 }
 
-.btn-flat {
+
+.btn-flat-showtime-show {
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
   background: #FFDC7F;
   transition: background 0.3s ease;
+  text-align: center;
 }
 
-.btn-flat:hover {
-  background: #1BCB7F;
+.btn-flat-showtime-show:hover {
+  background: #FFEDBF;
   color: white;
 }
 
@@ -28,4 +28,26 @@
 
 .showtime-movie {
   margin: 20px;
+}
+
+.showtime-hour {
+  font-size: 20px;
+  text-align: center;
+  padding-bottom: 30px;
+
+}
+
+.fa-compass {
+color: grey;
+}
+
+.showtime-distance {
+  text-align:right;
+  font-size: 12px;
+  padding-bottom: 15px;
+
+}
+
+.showtime-price {
+  text-align: right;
 }
