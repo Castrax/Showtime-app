@@ -22,7 +22,17 @@ u1 = User.create(email: "coco@coco.com", password: "testtest")
 puts "Creating t1..."
 
 t1 = Theater.create(name: "Louxor", address: "Bd de Magenta")
+louxor = URI.open("https://upload.wikimedia.org/wikipedia/commons/4/42/P1320950_Paris_X_Louxor_rwk.jpg")
+t1.photo.attach(io: louxor, filename: 'louxor.jpg', content_type: 'image/jpg')
+t1.save
+
+puts "Creating t2..."
+
+
 t2 = Theater.create(name: "Majestic Bastille", address: "4 Boulevard Richard Lenoir, 75011 Paris")
+majestic = URI.open("https://projectionniste.net/images/75-majestic-bastille-paris-2.jpg")
+t2.photo.attach(io: majestic, filename: 'majestic.jpg', content_type: 'image/jpg')
+t2.save
 
 
 puts "Creating m1..."
