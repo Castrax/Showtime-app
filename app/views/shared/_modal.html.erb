@@ -27,7 +27,7 @@
         <p> <strong>Prix total : <span class="total-price-showtime-<%= showtime.id %>" data-price="<%= showtime.price %>"><%= (showtime.price).to_i %></span> €</strong></p>
       </div>
       <div class="modal-footer footer-center">
-        <%= form_tag orders_path, remote: true do %>
+        <%= form_tag orders_path do %>
           <%= hidden_field_tag 'showtime_id', showtime.id %>
           <%= hidden_field_tag 'number_of_seats', "", id: "number_of_seats_showtime-#{showtime.id}" %>
 <!--           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->

@@ -6,10 +6,15 @@ import { geoloc } from "../plugins/geoloc";
 import { calculatePrice } from "../plugins/calculate_price";
 import { heartLike } from "../plugins/heart_like";
 import { mySwiper } from "../plugins/swiper";
+import { initStripe } from "../plugins/stripe";
 
 initAutocomplete();
 initSiema();
 mySwiper();
+
+if (document.querySelector("#card-element")) {
+  initStripe();
+}
 
 if (document.querySelector('.geoloc')) {
   geoloc();

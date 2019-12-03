@@ -18,7 +18,6 @@ const calculatePrice = () => {
 
   plus.forEach((button) => {
     button.addEventListener("click", (event) => {
-      console.log(event);
       const showtimeId = button.dataset.showtime;
       const numberOfSeats = document.getElementById(`number-of-seats-${showtimeId}`);
       let counter = numberOfSeats.value;
@@ -26,10 +25,8 @@ const calculatePrice = () => {
       const totalPrice = document.querySelector(`.total-price-${showtimeId}`);
       const price = totalPrice.dataset.price;
       totalPrice.innerText = parseInt(numberOfSeats.value) * parseInt(price);
-      console.log(`#number_of_seats_showtime-${showtimeId}`)
       const stripeSeats = document.querySelector(`#number_of_seats_${showtimeId}`);
       stripeSeats.value = numberOfSeats.value;
-      console.log(stripeSeats.value)
     })
   })
 };

@@ -16,7 +16,7 @@
     <%= render 'shared/ios_pwa_links' %>
   </head>
   <body class="<%= body_class_names %>">
-    <% unless action_name == "home" && "movie" %>
+    <% unless action_name == "home" || action_name == "movie" %>
       <%= render 'shared/navbar' %>
     <% end %>
     <%= render 'shared/flashes' %>

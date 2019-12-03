@@ -1,24 +1,20 @@
 class OrdersController < ApplicationController
+
   def create
+
     showtime = Showtime.find(params[:showtime_id])
     @order = Order.create!(showtime: showtime, showtime_sku: showtime.sku, amount: showtime.price_cents * params[:number_of_seats].to_i, state: 'pending', user: current_user)
-    session = Stripe::Checkout::Session.create(
-      payment_method_types: ['card'],
-      line_items: [{
-        name: showtime.sku,
-        amount: showtime.price_cents * params[:number_of_seats].to_i,
-        currency: 'eur',
-        quantity: 1
-      }],
-      success_url: order_url(@order),
-      cancel_url: order_url(@order)
+
+    Stripe.api_key = 'sk_test_7f5ilQTjtoX0wzLsWEdvYm6K00oWJslNHU'
+
+    intent = Stripe::PaymentIntent.create(
+      amount: showtime.price_cents * params[:number_of_seats].to_i,
+      currency: 'eur'
     )
 
-    @order.update(checkout_session_id: session.id)
+    @order.update(payment_intent: intent.client_secret)
 
-    respond_to do |format|
-      format.js
-    end
+    redirect_to new_order_payment_path(@order)
   end
 
   def show
