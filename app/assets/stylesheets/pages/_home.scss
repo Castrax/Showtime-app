@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .body-bg {
-  background-image: url('https://res.cloudinary.com/ddlesqeup/image/upload/v1575318183/showtime-background_llnaui.png');
+  background-image: url('https://res.cloudinary.com/ddlesqeup/image/upload/v1575365694/background_qx2qc6.jpg');
   background-size: cover;
 }
 
@@ -9,6 +9,7 @@
   margin-bottom: 0;
   font-size: 3rem;
   font-weight: bolder;
+  color: white;
 }
 
 .img-logo {
@@ -33,7 +34,7 @@
 .tagline {
   text-align: center;
   padding: 2rem 0 0 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: white;
   letter-spacing: 2px;
 }
@@ -46,6 +47,9 @@
 
 .location-text, #autocomplete_address {
   font-size: 1.25rem;
+}
+
+.location-text {
 }
 
 
@@ -76,14 +80,9 @@
 .btn-home {
   padding: 1rem 2rem 1rem 2rem;
   border-radius: 10px;
-  background: #fcad26;
-  color: #fff;
+  background: #FAD87D;
+  color: $st-dark-grey;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-weight: 900;
-}
-
-.highlight {
-  color: #fca716;
   font-weight: 900;
 }
