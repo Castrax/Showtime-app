@@ -15,8 +15,8 @@
     <% end %>
     <div class="showtime-infos">
         <h3><%= showtime.movie.title %></h3>
-        <p class="showtime-hour">Séance à <%= showtime.start_hour.strftime("%Hh%M") %></p>
-        <p class="showtime-pricing"><%= showtime.price_cents / 100 %> €</p>
+        <p class="showtime-pricing"><%= showtime.price_cents / 100 %>€/fauteuil</p>
+        <span class="distance-cine"><i class="far fa-compass"></i><%= (showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</span>
     </div>
   </div>
 <% end %>
