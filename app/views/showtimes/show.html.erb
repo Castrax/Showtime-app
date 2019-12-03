@@ -1,51 +1,42 @@
-<div class="showtime-show-infos">
-  <div class="theater-photo">
-    <% if @showtime.theater.photo.attached? %>
-      <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
-    <% else %>
-      <%= cl_image_tag("unknown_mn7pzj.png", :width=>220, :crop=>"scale") %>
-    <% end %>
-  </div>
-  <div class="showtime-description">
-    <p class="showtime-title"><%= @showtime.theater.name %></p>
-    <div class="showtime-distance">
-      <i class="far fa-compass">500m</i>
-    </div>
-    <p class="showtime-show-hour"><i class="fas fa-film"></i><%= @showtime.start_hour.strftime("%Hh%M") %></p>
-    <div class="showtime-price">
-      <p><del><%= @showtime.initial_price %>€</del>
-      <%= @showtime.price %>€</p>
-    </div>
-    <a class="btn btn-flat-showtime-show" href="#">Book now</a>
-
-  </div>
-</div>
-
-<div class="showtime-movie">
-  <div class="flex">
-    <div class="s-movie-photo">
-      <%= cl_image_tag @showtime.movie.photos.first.key, width: 100, height: 150, crop: "fill" %>
-    </div>
-    <div>
-      <p><%= @showtime.movie.title %></p>
-      <p>Réalisateur : <%= @showtime.movie.director %></p>
-      <p>Casting : <%= @showtime.movie.cast %></p>
+<div class="container">
+  <div class="card-showtime">
+    <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
+    <div class="card-showtime-infos">
+      <h2><%= @showtime.theater.name %></h2>
+      <p></i><%= @showtime.start_hour.strftime("%Hh%M") %></p>
+      <p><del><%= @showtime.initial_price %>€</del><%= @showtime.price %>€</p>
+      <p>500m</p>
+      <p><a class="btn btn-flat-showtime-show" href="#">Book now</a></p>
     </div>
   </div>
-  <p><%= @showtime.movie.rating %></p>
-  <p><%= @showtime.movie.description %></p>
-</div>
+  <div class="showtime-movie">
+    <div class="flex">
+      <div class="s-movie-photo">
+        <%= cl_image_tag @showtime.movie.photos.first.key, width: 100, height: 150, crop: "fill" %>
+      </div>
+      <div>
+        <p><%= @showtime.movie.title %></p>
+        <p>Réalisateur : <%= @showtime.movie.director %></p>
+        <p>Casting : <%= @showtime.movie.cast %></p>
+      </div>
+    </div>
+    <p><%= @showtime.movie.rating %></p>
+    <p><%= @showtime.movie.description %></p>
+  </div>
 
-Autres séances
+  <h2>Autres séances</h2>
 
-<div class="other-showtimes">
-  <% @theaters.each do |theater| %>
-    <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
-      <%= theater.name %>
-      <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
-        <%= showtime.start_hour.strftime("%Hh%M") %>
+  <div class="other-showtimes">
+    <% @theaters.each do |theater| %>
+      <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
+        <%= theater.name %>
+        <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
+          <%= showtime.start_hour.strftime("%Hh%M") %>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
+
+
 
