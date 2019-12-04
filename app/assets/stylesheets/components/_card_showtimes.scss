@@ -22,21 +22,32 @@
 }
 
 .card-showtime p {
-  font-size: 14px;
+  font-size: 1rem;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 0;
   margin-top: 6px;
+}
+
+.pricing {
+  font-size: 1.1rem;
 }
 
 .card-showtime-infos {
   padding: 16px;
 }
 
-.card-showtime-infos h3 {
+.card-showtime-infos h2 {
   font-size: 1rem;
   margin: 12px 0 0 0;
   color: $yellow;
+}
+
+.card-showtime-infos h3 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: $st-body-color;
+  padding-bottom: 0;
+  font-weight: 800;
 }
 
 .flex-card {
@@ -78,4 +89,19 @@
   font-weight: 900;
   font-size: 1rem;
   text-align: center;
+  position:fixed;
+  width: 345px;
+  top: 330px;
+}
+
+.autres-seances h2 {
+  margin-top: 3rem;
+  font-size: 1.1rem;
+  color: #46494D;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.autres-seances > .card-showtime {
+  margin-top: 1rem;
 }

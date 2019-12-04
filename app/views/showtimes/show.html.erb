@@ -15,7 +15,7 @@
           </small>
       </div>
     </p>
-    <p>Réalisateur : <%= @showtime.movie.director %> <br>Casting : <%= @showtime.movie.cast %> </p>
+    <p>De <strong><%= @showtime.movie.director %></strong> , avec <strong><%= @showtime.movie.cast %></strong></p>
     <p><%= @showtime.movie.description %></p>
   </div>
 </div>
@@ -24,41 +24,42 @@
   <div class="card-showtime">
     <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
     <div class="card-showtime-infos">
-      <h2><%= @showtime.theater.name %></h2>
+      <h3><%= @showtime.theater.name %></h3>
       <div class="flex-card">
         <p><i class="far fa-clock"></i> <%= @showtime.start_hour.strftime("%Hh%M") %></p>
-        <p><i class="fas fa-map-marker-alt"></i> <%= (@showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
+        <p class="distance-cine"><i class="far fa-compass"></i> <%= (@showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
       </div>
-      <h3><%= @showtime.price %>€ </h3>
-      <del><%= @showtime.initial_price %>€</del>
+      <p><del><%= @showtime.initial_price %>€</del> &nbsp <span class="pricing"><strong><%= @showtime.price %>€</strong></span></p>
       <p><i class="fas fa-couch"></i> <%= @showtime.empty_seats %> places restantes</p>
     </div>
   </div>
-  <a class="mt-3 btn-lg btn-block btn-showtime" href="#">Réserver</a>
-
-  <h2>Autres séances</h2>
-
-    <% @theaters.each do |theater| %>
-      <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
-        <div class="card-showtime">
-          <%= cl_image_tag theater.photo.key, width: 150, height: 225, crop: "fill" %>
-
-          <div class="card-showtime-infos">
-           <h2><%= theater.name %></h2>
-           <div class="flex-card">
-            <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
-                <p><%= showtime.start_hour.strftime("%Hh%M") %></p>
-                <p><%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
-            </div>
-                <h3><%= showtime.price %> €</H3>
-                <del><%= showtime.initial_price %>€</del>
-                <p><i class="fas fa-couch"></i> <%= showtime.empty_seats %> places restantes</p>
-            </div>
-          <% end %>
-        <% end %>
-       </div> <!-- showtime-card -->
-    <% end %>
+  <div class="link-button">
+    <a class="mt-3 btn-lg btn-block btn-showtime" href="#">Réserver</a>
   </div>
+
+  <div class="autres-seances">
+    <h2>Autres séances</h2>
+
+      <% @theaters.each do |theater| %>
+        <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
+          <div class="card-showtime">
+            <%= cl_image_tag theater.photo.key, width: 150, height: 225, crop: "fill" %>
+            <div class="card-showtime-infos">
+             <h3><%= theater.name %></h3>
+             <div class="flex-card">
+              <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
+                  <p><i class="far fa-clock"></i> <%= showtime.start_hour.strftime("%Hh%M") %></p>
+                  <p class="distance-cine"><i class="far fa-compass"></i> <%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
+              </div>
+                  <p><del><%= showtime.initial_price %>€</del> &nbsp <span class="pricing"><strong><%= showtime.price %> €</strong> </span></p>
+                  <p><i class="fas fa-couch"></i> <%= showtime.empty_seats %> places restantes</p>
+              </div>
+            <% end %>
+          <% end %>
+         </div> <!-- showtime-card -->
+      <% end %>
+  </div>
+</div>
 
 
 

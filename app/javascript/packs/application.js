@@ -9,6 +9,7 @@ import { mySwiper } from "../plugins/swiper";
 import { textWrapper } from "../plugins/anime";
 import { loader } from "../plugins/loader";
 import { loaderGeoloc } from "../plugins/loader";
+import { buttonFixed } from "../plugins/button_fixed";
 
 initAutocomplete();
 initSiema();
@@ -16,6 +17,7 @@ mySwiper();
 textWrapper();
 loader();
 loaderGeoloc();
+buttonFixed();
 
 if (document.querySelector('.geoloc')) {
   geoloc();
