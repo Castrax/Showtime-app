@@ -1,10 +1,11 @@
 .card-showtime {
   overflow: hidden;
-  height: 200px;
+  height: 150px;
   background: white;
   display: flex;
   align-items: center;
   margin-top: 2rem;
+  border-radius: 10px;
 }
 
 .card-showtime img {
@@ -20,26 +21,35 @@
   font-weight: 600;
 }
 
-.card-showtime-description {
-  margin: 1rem 0;
-}
-
 .card-showtime p {
   font-size: 14px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
-  margin-top: 8px;
+  margin-top: 6px;
 }
 
-.card-showtime .card-showtime-infos {
+.card-showtime-infos {
   padding: 16px;
+}
+
+.card-showtime-infos h3 {
+  font-size: 1rem;
+  margin: 12px 0 0 0;
+  color: $yellow;
+}
+
+.flex-card {
+  display: flex;
+  justify-content: space-between;
+  width: 150px;
 }
 
 .banner-showtime {
   background-size: cover;
   background-position: center;
-  padding: 100px 0;
+  padding: 50px 0;
+  height: 350px;
 }
 
 .banner-showtime h2 {
@@ -55,4 +65,17 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.btn-showtime {
+  padding: 10px 12px 10px 12px;
+  border-radius: 10px;
+  background: #FAD87D;
+  color: #46494D;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 900;
+  font-size: 1rem;
+  text-align: center;
 }
