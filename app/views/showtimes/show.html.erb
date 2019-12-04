@@ -38,7 +38,7 @@
     <% @theaters.each do |theater| %>
       <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
         <div class="card-showtime">
-          <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
+          <%= cl_image_tag theater.photo.key, width: 150, height: 225, crop: "fill" %>
 
           <div class="card-showtime-infos">
             <%= theater.name %>
