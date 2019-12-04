@@ -20,6 +20,9 @@
     </p>
     <p>De <strong><%= @showtime.movie.director %></strong> , avec <strong><%= @showtime.movie.cast %></strong></p>
     <p><%= @showtime.movie.description %></p>
+    <%= link_to "#", class: "btn-showtime", data: {toggle: "modal", target: "#showtimesModal-#{@showtime.empty_seats}"} do %>
+      Réserver
+    <% end %>
   </div>
 </div>
 
@@ -36,35 +39,34 @@
       <p><i class="fas fa-couch"></i> <%= @showtime.empty_seats %> places restantes</p>
     </div>
   </div>
-  <div class="link-button" data-toggle="modal" data-target="#showtimesModal-<%=@showtime.empty_seats %>">
-    <a class="mt-3 btn-lg btn-block btn-showtime" href="#">Réserver</a>
-  </div>
   <div><%= render partial: 'shared/modal', locals: { showtime: @showtime, title: @showtime.movie.title } %></div>
 
   <div class="autres-seances">
     <h2>Autres séances</h2>
-      <% @theaters.each do |theater| %>
-        <% if theater.showtimes.where(movie: @showtime.movie).where.not(id: @showtime.id).count > 0 %>
-          <div class="card-showtime">
-            <%= cl_image_tag theater.photo.key, width: 150, height: 225, crop: "fill" %>
-            <div class="card-showtime-infos">
-                <h3><%= theater.name %></h3>
-                <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
-                    <%= link_to movie_showtime_path(params[:movie_id], showtime.id) do %>
-                      <div class="flex-card">
-                        <p><i class="far fa-clock"></i> <%= showtime.start_hour.strftime("%Hh%M") %></p>
-                        <p class="distance-cine"><i class="far fa-compass"></i> <%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
-                      </div>
-                        <p><del><%= showtime.initial_price %>€</del> &nbsp <span class="pricing"><strong><%= showtime.price %> €</strong> </span></p>
-                        <p><i class="fas fa-couch"></i> <%= showtime.empty_seats %> places restantes</p>
-                    <% end %>
-                <% end %>
-            </div>
+    <% @theaters.each do |theater| %>
+      <% if theater.showtimes.where(movie: @showtime.movie).where.not(id: @showtime.id).count > 0 %>
+        <div class="card-showtime">
+          <%= cl_image_tag theater.photo.key, width: 150, height: 225, crop: "fill" %>
+          <div class="card-showtime-infos">
+              <h3><%= theater.name %></h3>
+              <% theater.showtimes.where(movie: @showtime.movie).each do |showtime| %>
+                  <%= link_to movie_showtime_path(params[:movie_id], showtime.id) do %>
+                    <div class="flex-card">
+                      <p><i class="far fa-clock"></i> <%= showtime.start_hour.strftime("%Hh%M") %></p>
+                      <p class="distance-cine"><i class="far fa-compass"></i> <%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
+                    </div>
+                      <p><del><%= showtime.initial_price %>€</del> &nbsp <span class="pricing"><strong><%= showtime.price %> €</strong> </span></p>
+                      <p><i class="fas fa-couch"></i> <%= showtime.empty_seats %> places restantes</p>
+                  <% end %>
+              <% end %>
           </div>
-        <% end %>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
+
+<%= render "shared/book_cta" %>
 <script src="https://js.stripe.com/v3/"></script>
 
 

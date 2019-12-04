@@ -91,17 +91,16 @@
 .btn-showtime {
   padding: 10px 12px 10px 12px;
   border-radius: 10px;
-  background: #FAD87D;
-  color: #46494D;
+  background: $st-yellow;
+  color: $st-dark-grey;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   font-weight: 900;
   font-size: 1rem;
   text-align: center;
-  position:fixed;
-  width: 345px;
-  top: 330px;
+  display: inline-block;
+  width: 100%;
 }
 
 .autres-seances h2 {
