@@ -1,7 +1,12 @@
-keyword = "Brooklyn Affairs"
-url = "https://api.themoviedb.org/3/search/movie?api_key=29a362d339e7c52809de913c6163096a&query=#{keyword}&language=fr-FR"
-movie_serialized = open(url).read
-movie = JSON.parse(movie_serialized)
+# require 'json'
+# require 'open-uri'
+# keyword = "Chanson douce"
+# url = "https://api.themoviedb.org/3/search/movie?api_key=29a362d339e7c52809de913c6163096a&query=#{keyword}&language=fr-FR"
+# movie_serialized = open(url).read
+# movie1 = JSON.parse(movie_serialized)
+# movie1_char = movie1["results"].first
+# poster_path1 = movie["results"].first["poster_path"]
+# photo_url1 = "http://image.tmdb.org/t/p/w300/#{poster_path}"
 
 puts "Cleaning the DB..."
 
@@ -30,10 +35,10 @@ majestic = URI.open("https://projectionniste.net/images/75-majestic-bastille-par
 t2.photo.attach(io: majestic, filename: 'majestic.jpg', content_type: 'image/jpg')
 t2.save
 
-
 puts "Creating m1..."
 
-m1 = Movie.create(title: "Hors Normes", director: "Toledano", cast: "Vincent Cassel, Reda Kateb, Hélène Vincent", description: "The story of two men, educators of children and adolescents with autism.", category: "Drama", duration: "1h47", rating: 4.5, almost_finished?: true)
+
+m1 = Movie.create(title: movie1_char["title"], director: "Toledano", cast: "Vincent Cassel, Reda Kateb, Hélène Vincent", description: "The story of two men, educators of children and adolescents with autism.", category: "Drama", duration: "1h47", rating: 4.5, almost_finished?: true)
 
 puts "Creating hors normes photos..."
 
