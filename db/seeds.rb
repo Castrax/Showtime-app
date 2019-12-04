@@ -18,6 +18,8 @@
 # response = http.request(request)
 # p response.read_body["results"].first
 
+#test
+
 puts "Cleaning the DB..."
 
 Order.destroy_all
