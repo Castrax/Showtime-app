@@ -2,7 +2,7 @@
   <div class="card-trip">
     <div class="ribbon-wrapper">
      <div class="ribbon-dark">
-      <p><%= showtime.price_cents / 100 %>€</p>
+      <p><del><span class="initial-pricee"><%= showtime.initial_price %>€</span></del> <%= showtime.price_cents / 100 %>€</p>
      </div>
     </div>
     <% if showtime.movie.photos.attached? %>
@@ -16,7 +16,7 @@
     <div class="showtime-infos">
         <h3><%= showtime.movie.title %></h3>
         <p class="showtime-trip-hour">Début : <%= showtime.start_hour.hour %>H</p>
-        <p class="showtime-trip-pricing"><%= showtime.price_cents / 100 %> €</p>
+        <span class="distance-cine"><i class="far fa-compass"></i><%= (showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</span>
     </div>
   </div>
 <% end %>

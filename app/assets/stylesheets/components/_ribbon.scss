@@ -18,7 +18,7 @@
 }
 
 .ribbon-dark {
-  background-color: $st-middle-grey;
+  background-color: #ff5858;
 }
 
 .ribbon-yellow > p {
@@ -34,11 +34,14 @@
   color: white;
   font-size: 1.25rem;
   opacity: 100%;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin: 0;
 }
 
 .dans {
   font-size: 0.75rem;
   letter-spacing: 0px;
+}
+
+.initial-pricee {
+  font-size: 1rem;
 }
