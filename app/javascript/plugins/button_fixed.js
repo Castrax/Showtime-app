@@ -1,21 +1,18 @@
 const buttonFixed = () => {
-  const buttonFixed = document.querySelector('.link-button');
-  const otherShowTime = document.querySelector('.autres-seances');
-
+  const buttonFixed = document.querySelector('.btn-showtime');
+  const bookCta = document.querySelector('.book-cta');
   function checkPosition(event) {
     let windowY = window.scrollY;
-    const otherShowTimeY = otherShowTime.getBoundingClientRect().top;
-    if (windowY < otherShowTimeY) {
+    const otherShowTimeY = buttonFixed.getBoundingClientRect().top;
+    if (windowY > otherShowTimeY) {
       // Scrolling UP
-      buttonFixed.classList.add('d-block');
-      buttonFixed.classList.remove('d-none');
+      bookCta.style.transform = "translateY(0%)";
     } else {
       // Scrolling DOWN
-      buttonFixed.classList.add('d-none');
-      buttonFixed.classList.remove('d-block');
+      bookCta.style.transform = "translateY(-100%)"
     }
   }
-  if (otherShowTime) {
+  if (bookCta) {
     window.addEventListener('scroll', (event) => checkPosition(event));
   }
 };

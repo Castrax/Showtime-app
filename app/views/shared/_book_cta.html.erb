@@ -1,0 +1,25 @@
+<div class="book-cta">
+  <div class="book-infos">
+    <h3><%= @showtime.movie.title %></h3>
+    <div class="book-infos-bottom">
+      <div class="book-location">
+        <p>
+          <i class="far fa-compass"></i>
+          <%= @showtime.theater.name %>
+        </p>
+      </div>
+      <div class="book-time">
+        <p>
+          <i class="far fa-clock"></i>
+          <%= @showtime.start_hour.strftime("%Hh%M") %>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="book-calltoaction">
+    <%= link_to "#", class: "", data: {toggle: "modal", target: "#showtimesModal-#{@showtime.empty_seats}"} do %>
+      Réserver
+      <span><%= @showtime.price %>€</span>
+    <% end %>
+  </div>
+</div>
