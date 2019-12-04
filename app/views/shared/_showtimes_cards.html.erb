@@ -21,7 +21,8 @@
             <p></i><%= (theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
           </div>
         </div>
-        <div><%= render partial: 'shared/modal', locals: { showtime: showtime } %></div>
+        <div><%= render partial: 'shared/modal', locals: { showtime: showtime, title: @movie[:title] } %></div>
       <% end %>
     </div>
   <% end %>
+

@@ -21,20 +21,23 @@
 </div>
 
 <div class="container">
-  <div class="card-showtime">
-    <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
-    <div class="card-showtime-infos">
-      <h2><%= @showtime.theater.name %></h2>
-      <div class="flex-card">
-        <p><i class="far fa-clock"></i> <%= @showtime.start_hour.strftime("%Hh%M") %></p>
-        <p><i class="fas fa-map-marker-alt"></i> <%= (@showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
+  <div class="" data-toggle="modal" data-target="#showtimesModal-<%=@showtime.empty_seats %>"> <!-- à mettre sur le bouton réserver -->
+    <div class="card-showtime">
+      <%= cl_image_tag @showtime.theater.photo.key, width: 150, height: 225, crop: "fill" %>
+      <div class="card-showtime-infos">
+        <h2><%= @showtime.theater.name %></h2>
+        <div class="flex-card">
+          <p><i class="far fa-clock"></i> <%= @showtime.start_hour.strftime("%Hh%M") %></p>
+          <p><i class="fas fa-map-marker-alt"></i> <%= (@showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
+        </div>
+        <h3><%= @showtime.price %>€ </h3>
+        <del><%= @showtime.initial_price %>€</del>
+        <p><i class="fas fa-couch"></i> <%= @showtime.empty_seats %> places restantes</p>
       </div>
-      <h3><%= @showtime.price %>€ </h3>
-      <del><%= @showtime.initial_price %>€</del>
-      <p><i class="fas fa-couch"></i> <%= @showtime.empty_seats %> places restantes</p>
     </div>
   </div>
-  <a class="mt-3 btn-lg btn-block btn-showtime" href="#">Réserver</a>
+  <div><%= render partial: 'shared/modal', locals: { showtime: @showtime, title: @showtime.movie.title } %></div>
+
 
   <h2>Autres séances</h2>
 
@@ -59,6 +62,6 @@
        </div> <!-- showtime-card -->
     <% end %>
   </div>
-
+<script src="https://js.stripe.com/v3/"></script>
 
 
