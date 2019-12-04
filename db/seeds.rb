@@ -1,7 +1,31 @@
+
 # keyword = "Brooklyn Affairs"
 # url = "https://api.themoviedb.org/3/search/movie?api_key=29a362d339e7c52809de913c6163096a&query=#{keyword}&language=fr-FR"
 # movie_serialized = open(url).read
 # movie = JSON.parse(movie_serialized)
+
+# require 'json'
+# require 'open-uri'
+# keyword = "Chanson douce"
+# url = "https://api.themoviedb.org/3/search/movie?api_key=29a362d339e7c52809de913c6163096a&query=#{keyword}&language=fr-FR"
+# movie_serialized = open(url).read
+# movie1 = JSON.parse(movie_serialized)
+# movie1_char = movie1["results"].first
+# poster_path1 = movie["results"].first["poster_path"]
+# photo_url1 = "http://image.tmdb.org/t/p/w300/#{poster_path}"
+
+# keyword = "chanson douce"
+# url = URI("https://api.themoviedb.org/3/search/movie?include_adult=false&query=#{keyword}&language=fr-FR&api_key=29a362d339e7c52809de913c6163096a")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request.body = "{}"
+# response = http.request(request)
+# p response.read_body["results"].first
+
+#test
+
 
 puts "Cleaning the DB..."
 
@@ -43,6 +67,7 @@ t4 = Theater.create(name: "Mk2 Quai de Seine", address: "14 Quai de Seine, 75019
 seine = URI.open("https://www.parisinfo.com/var/otcp/sites/images/node_43/node_51/node_77884/node_77888/mk2-quai-de-seine-vue-de-face-%7C-630x405-%7C-%C2%A9-david-mcspadden/13227102-1-fre-FR/MK2-Quai-de-Seine-Vue-de-face-%7C-630x405-%7C-%C2%A9-David-McSpadden.jpg")
 t4.photo.attach(io: seine, filename: 'seine.jpg', content_type: 'image/jpg')
 t4.save
+
 
 
 # MOVIES
