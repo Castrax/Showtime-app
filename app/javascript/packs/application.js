@@ -31,6 +31,8 @@ if (document.querySelector('.modal')) {
   calculatePrice();
 };
 
-document.querySelector(".js-redirect-back").addEventListener("click", event => {
-  window.history.back()
-})
+if (document.querySelector(".js-redirect-back")) {
+  document.querySelector(".js-redirect-back").addEventListener("click", event => {
+    window.history.back()
+  });
+}
