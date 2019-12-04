@@ -83,9 +83,6 @@ m5 = Movie.create(title: "Knives out", director: "Rian Johnson", cast: "Daniel C
 ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SY1000_SX675_AL_.jpg")
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
 
-
-m6 = Movie.create(title: movie["results"].first["title"], )
-
 s1 = Showtime.new(empty_seats: 15, price_cents: 400, initial_price: 15, sku: "12345A", start_hour: DateTime.new(2019,12,06,18,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
 s1.movie = m1
 s1.theater = t1
