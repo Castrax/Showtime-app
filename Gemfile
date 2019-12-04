@@ -23,6 +23,7 @@ gem 'octicons_helper'
 gem 'money-rails'
 gem 'httparty'
 gem 'stripe'
+gem 'rest-client'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
