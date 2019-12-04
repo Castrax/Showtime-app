@@ -41,7 +41,7 @@
   <div class="autres-seances">
     <h2>Autres séances</h2>
       <% @theaters.each do |theater| %>
-        <% if theater.showtimes.where(movie: @showtime.movie).count > 0 %>
+        <% if theater.showtimes.where(movie: @showtime.movie).where.not(id: @showtime.id).count > 0 %>
           <div class="card-showtime">
             <%= cl_image_tag theater.photo.key, width: 150, height: 225, crop: "fill" %>
             <div class="card-showtime-infos">
