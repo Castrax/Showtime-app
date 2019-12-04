@@ -1,7 +1,6 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   border-radius: 10px;
   margin: 5px 0px;
   width: 220px
@@ -12,9 +11,11 @@
 }
 
 .card-trip h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin: 0;
   color: $st-body-color;
+  padding-bottom: 0;
+  font-weight: 800;
 }
 
 .card-trip p {
@@ -62,9 +63,17 @@
 }
 
 .showtime-infos {
-  padding: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem;
 }
 
 .showtime-infos h3 {
-  padding-bottom: 0.5rem;
+  margin-top: 5px;
+}
+
+.showtime-pricing {
+  opacity: 100%;
 }

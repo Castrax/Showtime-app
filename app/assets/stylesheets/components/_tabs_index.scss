@@ -1,0 +1,18 @@
+.tab-link-custom {
+  background-color: #f4f4f4 !important;
+  padding: 1rem 0rem 0.5rem 0rem;
+  margin-right: 3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 70%;
+  color: blue !important;
+  &.active {
+  opacity: 100%;
+  border-bottom: 4px solid yellow;
+  border-color: green;
+  }
+}
+
+.siema2 > div{
+  width:1750px!important;
+}

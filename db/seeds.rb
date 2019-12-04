@@ -1,11 +1,24 @@
-require 'open-uri'
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# require 'json'
+# require 'open-uri'
+# keyword = "Chanson douce"
+# url = "https://api.themoviedb.org/3/search/movie?api_key=29a362d339e7c52809de913c6163096a&query=#{keyword}&language=fr-FR"
+# movie_serialized = open(url).read
+# movie1 = JSON.parse(movie_serialized)
+# movie1_char = movie1["results"].first
+# poster_path1 = movie["results"].first["poster_path"]
+# photo_url1 = "http://image.tmdb.org/t/p/w300/#{poster_path}"
+
+# keyword = "chanson douce"
+# url = URI("https://api.themoviedb.org/3/search/movie?include_adult=false&query=#{keyword}&language=fr-FR&api_key=29a362d339e7c52809de913c6163096a")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request.body = "{}"
+# response = http.request(request)
+# p response.read_body["results"].first
+
+#test
 
 puts "Cleaning the DB..."
 
@@ -34,10 +47,10 @@ majestic = URI.open("https://projectionniste.net/images/75-majestic-bastille-par
 t2.photo.attach(io: majestic, filename: 'majestic.jpg', content_type: 'image/jpg')
 t2.save
 
-
 puts "Creating m1..."
 
-m1 = Movie.create(title: "Hors Normes", director: "Toledano", cast: "Vincent Cassel, Reda Kateb, Hélène Vincent", description: "The story of two men, educators of children and adolescents with autism.", category: "Drama", duration: "1h47", rating: 4.5, almost_finished?: true)
+
+m1 = Movie.create(title: "Hors normes", director: "Toledano", cast: "Vincent Cassel, Reda Kateb, Hélène Vincent", description: "The story of two men, educators of children and adolescents with autism.", category: "Drama", duration: "1h47", rating: 4.5, almost_finished?: true)
 
 puts "Creating hors normes photos..."
 
@@ -58,8 +71,9 @@ m2.save
 m3 = Movie.create(title: "Frozen 2", director: "Chris Buck", cast: "Kristen Bell, Idina Menzel, Josh Gad", description: "Anna, Elsa, Kristoff, Olaf and Sven leave Arendelle to travel to an ancient, autumn-bound forest of an enchanted land. They set out to find the origin of Elsa's powers in order to save their kingdom.", category: "Animation", duration: "1h47", rating: 4.9)
 frozen1 = URI.open("https://m.media-amazon.com/images/M/MV5BMjA0YjYyZGMtN2U0Ni00YmY4LWJkZTItYTMyMjY3NGYyMTJkXkEyXkFqcGdeQXVyNDg4NjY5OTQ@._V1_SY1000_SX675_AL_.jpg")
 m3.photos.attach(io: frozen1, filename: 'frozen1.jpg', content_type: 'image/jpg')
-
-
+miserables_2 = URI.open("https://m.media-amazon.com/images/M/MV5BMDY0MGE5MzUtNDllMi00MmUxLWI3MTItNWJiMmQ3MzJjMDcxXkEyXkFqcGdeQXVyODIyOTEyMzY@._V1_.jpg")
+m2.photos.attach(io: miserables_2, filename: 'miserables-2.jpg', content_type: 'image/jpg')
+m2.save
 
 m4 = Movie.create(title: "The Lion King", director: "Chris Buck", description: "Lorem ipsum taoifnez zheioghzojrgb jezpigskhnrzjogn pihzeg pihzpkg pihgiphazr giphegpihazr ghzrgiphearg ihgpizrhg aipzrhg zrgpihzr giphzr pigjh apirsgj pzirgj pizrhjg pierhgpikzrhng pishrgpierhg piezrhg piekrh gpizerh gpierjgpijer gj", category: "Animation", duration: "1h47", rating: 5)
 rl1 = URI.open("https://m.media-amazon.com/images/M/MV5BZTQ4ZDhmOTMtN2EzZi00ZjhjLTkxMmMtYTFiODNiYzEwZTc3XkEyXkFqcGdeQXVyODUzMjQxMTA@._V1_SY1000_CR0,0,666,1000_AL_.jpg")
@@ -68,7 +82,6 @@ m4.photos.attach(io: rl1, filename: 'images_pe8e7l.jpg', content_type: 'image/jp
 m5 = Movie.create(title: "Knives out", director: "Rian Johnson", cast: "Daniel Craig, Chris Evans, Ana de Armas, Jamie Lee Curtis", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", category: "Drama", duration: "1h47", rating: 5, almost_finished?: true)
 ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SY1000_SX675_AL_.jpg")
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
-
 
 s1 = Showtime.new(empty_seats: 15, price_cents: 400, initial_price: 15, sku: "12345A", start_hour: DateTime.new(2019,12,06,18,00,00), end_hour: DateTime.new(2019,12,06,13,47,00))
 s1.movie = m1

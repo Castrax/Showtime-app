@@ -1,13 +1,27 @@
 .container-index {
-  width: 23rem;
-  margin: 0 2rem 2rem 20px;
+  padding: 0 1rem 2rem 20px;
   h2 {
     margin: 3rem 0 1rem 0;
   }
 }
 
 .container-index h2 {
-  font-size: 1.5rem;
-  letter-spacing: 2px;
+  font-size: 1.1rem;
   color: #46494D;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.distance-cine {
+  color: black;
+  background-color: #FDDC7F;
+  width: 5rem;
+  height: 1rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.distance-cine > .fa-compass {
+  font-weight: 800;
+  color: black;
 }
