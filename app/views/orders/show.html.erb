@@ -5,7 +5,7 @@
         <div class="date">
          <time datetime="23th feb">
           <% time = Time.new %>
-          <%= time.strftime("%d of %B, %Y") %>
+          <%= "6 décembre 2019" %>
         </time>
         </div>
         <div class="cardconf-cont">
@@ -16,7 +16,7 @@
           <div class="even-date">
            <i class="fa fa-calendar"></i>
            <time>
-             <span class="hours">from <%= @order.showtime.start_hour.hour %>h to <%= @order.showtime.end_hour.hour %>h</span>
+             <span class="hours"> de <%= @order.showtime.start_hour.hour %>h à <%= @order.showtime.end_hour.hour %>h</span>
            </time>
           </div>
           <div class="even-info">
