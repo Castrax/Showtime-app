@@ -8,6 +8,16 @@
 # poster_path1 = movie["results"].first["poster_path"]
 # photo_url1 = "http://image.tmdb.org/t/p/w300/#{poster_path}"
 
+# keyword = "chanson douce"
+# url = URI("https://api.themoviedb.org/3/search/movie?include_adult=false&query=#{keyword}&language=fr-FR&api_key=29a362d339e7c52809de913c6163096a")
+# http = Net::HTTP.new(url.host, url.port)
+# http.use_ssl = true
+# http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+# request = Net::HTTP::Get.new(url)
+# request.body = "{}"
+# response = http.request(request)
+# p response.read_body["results"].first
+
 puts "Cleaning the DB..."
 
 Order.destroy_all
@@ -70,16 +80,6 @@ m4.photos.attach(io: rl1, filename: 'images_pe8e7l.jpg', content_type: 'image/jp
 m5 = Movie.create(title: "Knives out", director: "Rian Johnson", cast: "Daniel Craig, Chris Evans, Ana de Armas, Jamie Lee Curtis", description: "A detective investigates the death of a patriarch of an eccentric, combative family.", category: "Drama", duration: "1h47", rating: 5, almost_finished?: true)
 ko1 = URI.open("https://m.media-amazon.com/images/M/MV5BMGUwZjliMTAtNzAxZi00MWNiLWE2NzgtZGUxMGQxZjhhNDRiXkEyXkFqcGdeQXVyNjU1NzU3MzE@._V1_SY1000_SX675_AL_.jpg")
 m5.photos.attach(io: ko1, filename: 'ko1.jpg', content_type: 'image/jpg')
-
-keyword = "chanson douce"
-url = URI("https://api.themoviedb.org/3/search/movie?include_adult=false&query=#{keyword}&language=fr-FR&api_key=29a362d339e7c52809de913c6163096a")
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-request = Net::HTTP::Get.new(url)
-request.body = "{}"
-response = http.request(request)
-p response.read_body["results"].first
 
 
 m6 = Movie.create(title: movie["results"].first["title"], )
