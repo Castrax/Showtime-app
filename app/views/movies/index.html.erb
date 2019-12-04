@@ -3,7 +3,7 @@
   <div class="bg-lastminute">
     <h2>Dernière minute</h2>
     <div class="siema">
-      <% @showtimes.each do |showtime| %>
+      <% @showtimes.sort_by { |showtime| showtime.start_hour }.each do |showtime| %>
         <!-- Carrousel for each last chance showtime -->
         <%= render './shared/card_showtime_lastminute', showtime: showtime %>
       <% end %>
@@ -14,7 +14,7 @@
   <div class="bg-bestdeals">
     <h2>Meilleures offres</h2>
     <div class="siema">
-      <% @showtimes.each do |showtime| %>
+      <% @showtimes.sort_by { |showtime| showtime.price }.each do |showtime| %>
         <!-- Carrousel for each last chance showtime -->
         <%= render './shared/card_showtime_bestdeal', showtime: showtime %>
       <% end %>
