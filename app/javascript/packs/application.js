@@ -30,3 +30,7 @@ if (document.querySelector('#add-favorite')) {
 if (document.querySelector('.modal')) {
   calculatePrice();
 };
+
+document.querySelector(".js-redirect-back").addEventListener("click", event => {
+  window.history.back()
+})
