@@ -33,6 +33,9 @@
     font-size: 1.1em;
     font-weight: 700;
   }
+  a:focus {
+    outline: none !important;
+  }
   a > span {
     border-left: 1px solid rgba(0,0,0,0.2);
     padding-left: 5px;

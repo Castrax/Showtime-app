@@ -13,7 +13,7 @@
             <div class="cart-details">
               <h2><%= showtime.start_hour.strftime("%Hh%M") %></h2>
               <p><i class="far fa-compass"></i> <%= @showtime.theater.name %> <%= (@showtime.theater.distance_to([session[:latitude], session[:longitude]])).round(1)%>km</p>
-              <p><%= showtime.empty_seats %> fauteuils libres.</p>
+              <p><%= showtime.empty_seats %> fauteuils libres</p>
               <div class="cart-quantity">
                 <div class="input-group choose-seats">
                   <span class="input-group-btn">
