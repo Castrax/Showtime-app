@@ -27,9 +27,7 @@
     <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <title>Showtime | Don't miss the experience</title>
     <%= csrf_meta_tags %>
-
-    <!-- <link href="/assets/favicon-32x32.ico" rel="shortcut icon" type="image/x-icon"/> -->
-    <%= favicon_link_tag asset_path('icons/favicon-32x32.png') %>
+    <%= favicon_link_tag %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
