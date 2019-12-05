@@ -24,6 +24,7 @@ gem 'money-rails'
 gem 'httparty'
 gem 'stripe'
 gem 'rest-client'
+gem 'http'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

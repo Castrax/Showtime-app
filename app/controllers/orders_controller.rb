@@ -24,4 +24,18 @@ class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find(params[:id])
   end
+
+  def pass
+    @order = Order.find(params[:order_id])
+    res = HTTP.post(
+      'https://passe-passe.herokuapp.com/passes',
+      json: {
+        movie_name: @order.showtime.movie.title,
+        theater_name: @order.showtime.theater.name,
+        time: @order.showtime.start_hour.to_time.iso8601,
+        secret_key: ENV["PASSES_SECRET_KEY"]
+      }
+    )
+    render plain: res.body, content_type: 'application/vnd.apple.pkpass'
+  end
 end
