@@ -65,7 +65,7 @@
   background-size: cover;
   background-position: center;
   padding: 20px 0;
-  height: 350px;
+  height: 460px;
 }
 
 .banner-showtime h2 {
@@ -74,6 +74,13 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 2rem;
   font-weight: bold;
+}
+
+.banner-showtime-spacing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
 }
 
 .banner-showtime-back {
@@ -91,17 +98,19 @@
 .btn-showtime {
   padding: 10px 12px 10px 12px;
   border-radius: 10px;
-  background: #FAD87D;
-  color: #46494D;
+  background: $st-yellow;
+  color: $st-dark-grey;
   text-transform: uppercase;
   text-decoration: none;
   letter-spacing: 1px;
   font-weight: 900;
   font-size: 1rem;
   text-align: center;
-  position:fixed;
-  width: 345px;
-  top: 330px;
+  display: inline-block;
+  width: 100%;
+  &:focus, &:hover {
+    outline: none;
+  }
 }
 
 .autres-seances h2 {
