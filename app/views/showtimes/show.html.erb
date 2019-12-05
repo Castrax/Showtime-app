@@ -1,28 +1,30 @@
 <div class="banner-showtime" style="background-image: linear-gradient(rgba(0,0,0,0.66),rgba(0,0,0,0.66)), url(<%= cl_image_path @showtime.movie.photos.second.key, height: 250 %>);">
-  <div class="container">
+  <div class="container" style="height: 100%;">
     <%= link_to "#", class:"js-redirect-back banner-showtime-back" do %>
       <i class="fas fa-long-arrow-alt-left"></i>
     <% end %>
-    <h2><%= @showtime.movie.title %></h2>
-    <p><div class="list-group">
-          <small>
-            <% count = 0 %>
-            <% 5.times do %>
-              <% if @showtime.movie.rating.round > count %>
-                <i class="fas fa-star"></i>
-              <% else %>
-                <i class="far fa-star"></i>
+    <div class="banner-showtime-spacing">
+      <h2><%= @showtime.movie.title %></h2>
+      <p><div class="list-group">
+            <small>
+              <% count = 0 %>
+              <% 5.times do %>
+                <% if @showtime.movie.rating.round > count %>
+                  <i class="fas fa-star"></i>
+                <% else %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                <% count += 1 %>
               <% end %>
-              <% count += 1 %>
-            <% end %>
-          </small>
-      </div>
-    </p>
-    <p>De <strong><%= @showtime.movie.director %></strong> , avec <strong><%= @showtime.movie.cast %></strong></p>
-    <p><%= @showtime.movie.description %></p>
-    <%= link_to "#", class: "btn-showtime", data: {toggle: "modal", target: "#showtimesModal-#{@showtime.empty_seats}"} do %>
-      Réserver
-    <% end %>
+            </small>
+        </div>
+      </p>
+      <p>De <strong><%= @showtime.movie.director %></strong> , avec <strong><%= @showtime.movie.cast %></strong></p>
+      <p><%= @showtime.movie.description %></p>
+      <%= link_to "#", class: "btn-showtime", data: {toggle: "modal", target: "#showtimesModal-#{@showtime.empty_seats}"} do %>
+        Réserver
+      <% end %>
+    </div>
   </div>
 </div>
 

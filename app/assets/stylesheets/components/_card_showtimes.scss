@@ -64,7 +64,7 @@
   background-size: cover;
   background-position: center;
   padding: 20px 0;
-  height: 350px;
+  height: 460px;
 }
 
 .banner-showtime h2 {
@@ -74,6 +74,13 @@
   font-size: 2rem;
   font-weight: bold;
   margin-top: 1rem;
+}
+
+.banner-showtime-spacing {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
 }
 
 .banner-showtime-back {
