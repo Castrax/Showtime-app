@@ -101,6 +101,9 @@
   text-align: center;
   display: inline-block;
   width: 100%;
+  &:focus, &:hover {
+    outline: none;
+  }
 }
 
 .autres-seances h2 {
