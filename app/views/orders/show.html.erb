@@ -29,7 +29,9 @@
             <img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575130254/frame_y9e6j6.png" width="150px" alt="">
           </div>
           <div class="add-wallet">
-            <%= render './shared/add_wallet_badge' %>
+            <%= link_to order_pass_path(@order) do %>
+              <%= render './shared/add_wallet_badge' %>
+            <% end %>
           </div>
         </div>
       </div>

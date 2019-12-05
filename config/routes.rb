@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       end
     end
   resources :orders, only: [:show, :create] do
+    get 'pass' #, on: :pass
     resources :payments, only: :new
     end
   get 'favorite', to: 'pages#favorite'
