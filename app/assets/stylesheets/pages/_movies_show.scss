@@ -124,7 +124,7 @@
 }
 
 .modal-border-height {
-  height: 60vh;
+  height: 100%;
   text-align: center;
 }
 
@@ -132,10 +132,6 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-.modal-body {
-  flex: 0;
 }
 
 .choose-seats {
@@ -161,6 +157,10 @@
 .book-button {
   width: 100%;
   border-radius: 4px;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #46494D;
 }
 
 .key-elements > p {

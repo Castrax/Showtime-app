@@ -16,6 +16,7 @@
 
 .card-showtime a {
   color: $st-dark-grey;
+  text-decoration: none;
 }
 
 .card-showtime h2 {
@@ -73,7 +74,6 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 2rem;
   font-weight: bold;
-  margin-top: 1rem;
 }
 
 .banner-showtime-spacing {
@@ -85,7 +85,7 @@
 
 .banner-showtime-back {
   color: white;
-  font-size: 20px;
+  font-size: 26px;
 }
 
 .banner-showtime p {
@@ -108,6 +108,9 @@
   text-align: center;
   display: inline-block;
   width: 100%;
+  &:focus, &:hover {
+    outline: none;
+  }
 }
 
 .autres-seances h2 {

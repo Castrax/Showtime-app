@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 .body-bg {
-  background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/16Tu8S18pu4/375x812');
+  // background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('https://source.unsplash.com/16Tu8S18pu4/375x812');
   background-size: cover;
 }
 
@@ -9,11 +9,15 @@
   margin-bottom: 0;
   font-size: 3rem;
   font-weight: bolder;
-  color: white;
+  color: $st-dark-grey;
 }
 
 .img-logo {
   margin-right: 1rem;
+}
+
+.logo img {
+  width: 25%;
 }
 
 .logo {
@@ -21,7 +25,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 5rem;
+  margin-top: 3rem;
   letter-spacing: 3px;
   font-weight: 900;
 }
@@ -33,16 +37,17 @@
 
 .tagline {
   text-align: center;
-  padding: 2rem 0 0 0;
-  font-size: 1.5rem;
-  color: white;
+  padding: 1rem 0 0 0;
+  font-size: 1.2rem;
+  color: $st-dark-grey;
   letter-spacing: 2px;
 }
 
 .current-location {
   display: flex;
   justify-content: flex-start;
-  color: white;
+  color: $st-dark-grey;
+  margin-left: 5px;
 }
 
 .location-text, #autocomplete_address {
@@ -63,7 +68,7 @@
 
 .form-control-search {
   height: 4rem;
-  border: 1px solid white;
+  border: 1px solid lightgrey;
   border-radius: 10px;
 }
 
@@ -86,4 +91,33 @@
   text-decoration: none;
   letter-spacing: 1px;
   font-weight: 900;
+}
+
+.pop-overlay {
+  width:300px;
+  position: absolute;
+  left: -20%;
+  bottom: 10px;
+  animation: move 3.3s ease-in-out;
+  z-index: -1;
+}
+
+@keyframes move {
+  0% {
+    transform: translate(100px, 300px);
+  }
+
+  50% {
+     transform: translate(0px, 0px);
+  }
+}
+
+.distance-cine-home{
+  background-image: linear-gradient(to right, transparent 50%, $st-yellow 50%);
+  background-origin: 0;
+  background-size: 200% 50%;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  transition: background-position 0.5s;
+  background-position: -100% 100%;
 }

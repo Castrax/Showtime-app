@@ -1,6 +1,6 @@
 <div class="banner-showtime" style="background-image: linear-gradient(rgba(0,0,0,0.66),rgba(0,0,0,0.66)), url(<%= cl_image_path @showtime.movie.photos.second.key, height: 250 %>);">
   <div class="container" style="height: 100%;">
-    <%= link_to "#", class:"js-redirect-back banner-showtime-back" do %>
+    <%= link_to movies_path do %>
       <i class="fas fa-long-arrow-alt-left"></i>
     <% end %>
     <div class="banner-showtime-spacing">
