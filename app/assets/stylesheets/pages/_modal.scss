@@ -25,3 +25,63 @@
   width: 101vw;
   margin: 0 auto;
 }
+
+.modal-title {
+  font-weight: 700;
+  font-size: 1.5em;
+}
+
+.cart-infos {
+  display: grid;
+  grid-template-columns: 110px 2fr 1fr;
+  text-align: left;
+}
+
+.cart-details {
+  padding-left: 1rem;
+}
+
+.cart-details h2 {
+  font-weight: 800;
+}
+
+.cart-price {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 0.2rem;
+  font-weight: 800;
+}
+
+.modal-footer {
+  flex-direction: column;
+}
+
+.modal-footer > form {
+  width: 100%;
+}
+
+.cart-total {
+  width: 100%;
+  text-align: left;
+  margin-right: 0;
+}
+
+.recap {
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.prix-total {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total-price-showtime-55 {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.modal-body {
+  margin-top: 1rem;
+}

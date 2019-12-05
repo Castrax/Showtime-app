@@ -134,6 +134,10 @@
   justify-content: space-around;
 }
 
+.modal-body {
+  flex: 0;
+}
+
 .choose-seats {
   width: auto;
   align-self: center;
@@ -155,7 +159,7 @@
 }
 
 .book-button {
-  width: 129px;
+  width: 100%;
   border-radius: 4px;
 }
 
