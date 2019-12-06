@@ -195,4 +195,4 @@ s10.movie = m7
 s10.theater = t1
 s10.save
 
-puts "C'est bon :)"
+puts "et voilà, c'est bon :)"
