@@ -180,7 +180,7 @@ s7.theater = t2
 s7.save
 
 
-s8 = Showtime.new(empty_seats: 11, price_cents: 300, initial_price: 13, sku: "12345E", start_hour: DateTime.new(2019,12,06,19,10,00), end_hour: DateTime.new(2019,12,06,18,47,00))
+s8 = Showtime.new(empty_seats: 11, price_cents: 300, initial_price: 13, sku: "12345E", start_hour: DateTime.new(2019,12,06,18,50,00), end_hour: DateTime.new(2019,12,06,18,47,00))
 s8.movie = m4
 s8.theater = t1
 s8.save
