@@ -10,12 +10,15 @@
 }
 
 .navbar-light p {
+  max-width: 75%;
   text-align: center;
   margin: 0 auto;
   width: auto;
   padding-top: 1rem;
   padding-right: 1rem;
   padding-left: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .navbar-toggler {
