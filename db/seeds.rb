@@ -175,17 +175,17 @@ s6.theater = t1
 s6.save
 
 s7 = Showtime.new(empty_seats: 37, price_cents: 500, initial_price: 12, sku: "12345D", start_hour: DateTime.new(2019,12,06,21,00,00), end_hour: DateTime.new(2019,12,06,23,00,00))
-s7.movie = m3
+s7.movie = m4
 s7.theater = t2
 s7.save
 
 
 s8 = Showtime.new(empty_seats: 11, price_cents: 300, initial_price: 13, sku: "12345E", start_hour: DateTime.new(2019,12,06,18,50,00), end_hour: DateTime.new(2019,12,06,18,47,00))
-s8.movie = m4
+s8.movie = m3
 s8.theater = t1
 s8.save
 
-s9 = Showtime.new(empty_seats: 22, price_cents: 290, initial_price: 11, sku: "12345F", start_hour: DateTime.new(2019,12,06,17,00,00), end_hour: DateTime.new(2019,12,06,19,47,00))
+s9 = Showtime.new(empty_seats: 22, price_cents: 290, initial_price: 11, sku: "12345F", start_hour: DateTime.new(2019,12,06,21,45,00), end_hour: DateTime.new(2019,12,06,19,47,00))
 s9.movie = m5
 s9.theater = t1
 s9.save
