@@ -16,7 +16,7 @@
           <div class="even-date">
            <i class="fa fa-calendar"></i>
            <time>
-             <span class="hours"> de <%= @order.showtime.start_hour.hour %>h à <%= @order.showtime.end_hour.hour %>h</span>
+             <span class="hours"> de <%= @order.showtime.start_hour.strftime("%Hh%M") %> à <%= @order.showtime.end_hour.strftime("%Hh%M") %></span>
            </time>
           </div>
           <div class="even-info">
