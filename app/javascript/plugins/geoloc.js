@@ -1,11 +1,9 @@
 const geoloc = () => {
-  const buttons = document.querySelectorAll('.geoloc');
-  buttons.forEach((button) => {
-    button.addEventListener('click', (event) => {
+  const currentPosition = document.querySelector('.geoloc');
+  currentPosition.addEventListener('click', (event) => {
       event.preventDefault();
       navigator.geolocation.getCurrentPosition(successCallback,errorCallback,{timeout:10000});
     });
-  });
 
   const successCallback = (event) => {
     const crd = event.coords;

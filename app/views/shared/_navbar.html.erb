@@ -1,25 +1,18 @@
+<% unless session[:latitude].nil? %>
+  <% search = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first %>
+<% end %>
 <% if action_name == "show" && controller_name == "movies" %>
   <div class="navbar navbar-expand-sm navbar-transparent">
-<% else %>
-  <div class="navbar navbar-expand-sm navbar-light">
-<% end %>
-  <% if action_name == "show" && controller_name == "movies" %>
     <%= link_to movies_path(lng: session[:longitude], lat:  session[:latitude]) do %>
       <i class="arrow fas fa-arrow-left"></i>
     <% end %>
-  <% end %>
-  <% unless session[:latitude].nil? %>
-    <% search = Geocoder.search([session[:latitude].to_f, session[:longitude].to_f]).first %>
     <% unless search.nil? %>
-      <% if action_name == "show" && controller_name == "movies" %>
-        <p></p>
-      <% else %>
-        <p><i class="fas fa-location-arrow"></i>&nbsp;&nbsp; <%= search.suburb %> - <%= search.city %> &nbsp;&nbsp;<i class="fas fa-chevron-down"></i></p>
-      <% end %>
+      <p></p>
     <% end %>
-  <% end %>
-  <% if action_name == 'show' && controller_name == "movies" %>
-  <% else %>
+  </div>
+<% else %>
+  <div class="navbar navbar-expand-sm navbar-light">
+    <p><i class="fas fa-location-arrow"></i>&nbsp;&nbsp; <%= search.suburb %> - <%= search.city %> &nbsp;&nbsp;<i class="fas fa-chevron-down"></i></p>
     <button class="navbar-toggler" id='navbarDropdown' type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -27,5 +20,5 @@
       <a class="dropdown-item" href="/movies">Accueil</a>
       <a class="dropdown-item" href="/favorite">Films favoris</a>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
