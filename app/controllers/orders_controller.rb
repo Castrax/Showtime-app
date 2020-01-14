@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:create], raise: false
 
   def create
     showtime = Showtime.find(params[:showtime_id])
