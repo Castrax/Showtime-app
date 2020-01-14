@@ -12,7 +12,11 @@
   </div>
 <% else %>
   <div class="navbar navbar-expand-sm navbar-light">
-    <p><i class="fas fa-location-arrow"></i>&nbsp;&nbsp; <%= search.suburb %> - <%= search.city %> &nbsp;&nbsp;<i class="fas fa-chevron-down"></i></p>
+    <% unless search.nil? %>
+      <p><i class="fas fa-location-arrow"></i>&nbsp;&nbsp; <%= search.suburb %> - <%= search.city %> &nbsp;&nbsp;<i class="fas fa-chevron-down"></i></p>
+    <% else %>
+      <p></p>
+    <% end %>
     <button class="navbar-toggler" id='navbarDropdown' type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>

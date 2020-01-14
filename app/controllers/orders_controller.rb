@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:create], raise: false
+
   def create
     showtime = Showtime.find(params[:showtime_id])
     @order = Order.create!(showtime: showtime, showtime_sku: showtime.sku, amount: showtime.price_cents * params[:number_of_seats].to_i, state: 'pending', user: current_user)
