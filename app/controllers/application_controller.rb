@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!, only: [:home]
+  before_action :authenticate_user!, except: [:orders, :create]
 
   def default_url_options
     { host: ENV["DOMAIN"] || "localhost:3000" }
