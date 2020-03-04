@@ -21,9 +21,13 @@
           </div>
           <div class="even-info">
             <i class="fa fa-map-marker"></i>
-            <p>
-              <span class="theater-name"><%= @order.showtime.theater.name %></span>, <%= Geocoder.search([@order.showtime.theater.latitude, @order.showtime.theater.longitude]).first.suburb %>
-            </p>
+            <% if Geocoder.search([@order.showtime.theater.latitude, @order.showtime.theater.longitude]).first.suburb != [] %>
+              <p>
+                  <span class="theater-name"><%= @order.showtime.theater.name %></span>, <%= Geocoder.search([@order.showtime.theater.latitude, @order.showtime.theater.longitude]).first.suburb %>
+              </p>
+            <% else %>
+              <p></p>
+            <% end %>
           </div>
           <div class="qr-code">
             <img src="https://res.cloudinary.com/ddlesqeup/image/upload/v1575130254/frame_y9e6j6.png" width="150px" alt="">
