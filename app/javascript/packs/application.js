@@ -36,3 +36,5 @@ if (document.querySelector(".js-redirect-back")) {
     window.history.back()
   });
 }
+
+import "controllers"
