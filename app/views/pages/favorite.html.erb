@@ -1,6 +1,3 @@
 <% @movies.first(2).each do |movie| %>
 <div><%= render './shared/card_index', movie: movie %></div>
 <% end %>
-
-<%= cl_image_tag("https://res.cloudinary.com/ddlesqeup/image/upload/v1587148912/l1ptst4rtn3njvabwcq0.jpg", :transformation =>
-    { :dpr => "auto", :responsive => true, :width => "auto", :crop => "scale"}) %>
