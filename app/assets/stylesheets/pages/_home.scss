@@ -121,3 +121,9 @@
   transition: background-position 0.5s;
   background-position: -100% 100%;
 }
+
+.message-desktop {
+  @media screen and (max-width: 768px)  {
+    display: none;
+  }
+}
