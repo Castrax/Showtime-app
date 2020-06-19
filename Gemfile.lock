@@ -246,7 +246,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activesupport (>= 5.2.3)
+  activesupport
   autoprefixer-rails
   bootsnap
   cloudinary (~> 1.12.0)
